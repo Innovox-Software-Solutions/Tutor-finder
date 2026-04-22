@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import TutorCard from '@/components/TutorCard';
 import { mockTutors } from '@/data/mockTutors';
-import { Search, Filter, SlidersHorizontal, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Search, Filter, SlidersHorizontal, ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 export default function FindTutor() {
   const [searchTerm, setSearchTerm] = useState('');

@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { UserCircle, BookOpen, GraduationCap, ArrowRight, Star } from 'lucide-react';
+import { UserCircle, BookOpen, GraduationCap, ArrowRight, Star, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function SelectRole() {
