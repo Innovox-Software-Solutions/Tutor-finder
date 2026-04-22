@@ -27,8 +27,8 @@ export default function AuthPage() {
   };
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-[#fdfdfd] p-2 md:p-8 py-6 md:py-20 selection:bg-accent selection:text-white">
-      <div className="max-w-6xl w-full grid lg:grid-cols-2 bg-white rounded-[1.5rem] md:rounded-[3rem] shadow-premium overflow-hidden border border-slate-100/50">
+    <main className="min-h-screen flex items-center justify-center bg-[#fdfdfd] p-3 md:p-8 py-4 md:py-20 selection:bg-accent selection:text-white">
+      <div className="max-w-6xl w-full grid lg:grid-cols-2 bg-white rounded-[2rem] md:rounded-[3rem] shadow-premium overflow-hidden border border-slate-100/50">
         
         {/* Branding Side */}
         <div className="bg-primary p-12 md:p-16 text-white hidden lg:flex flex-col justify-between relative overflow-hidden">

@@ -143,11 +143,18 @@ function Step1() {
       <OnboardingInput icon={<Home size={18} />} label="Full Address" placeholder="Flat No., Building, Street Name..." />
       <div className="space-y-2">
           <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest transition-colors">Preferred Teaching Mode</label>
-          <div className="grid grid-cols-3 gap-3">
-             <button className="py-3 bg-accent text-white rounded-xl font-black text-[10px] md:text-sm shadow-lg shadow-accent/20">HOME</button>
-             <button className="py-3 bg-slate-50 text-slate-400 rounded-xl font-black text-[10px] md:text-sm border border-slate-100">ONLINE</button>
-             <button className="py-3 bg-slate-50 text-slate-400 rounded-xl font-black text-[10px] md:text-sm border border-slate-100">BOTH</button>
+          <div className="grid grid-cols-3 gap-2">
+             <button className="py-3 bg-accent text-white rounded-xl font-black text-[10px] shadow-lg shadow-accent/20">HOME</button>
+             <button className="py-3 bg-slate-50 text-slate-400 rounded-xl font-black text-[10px] border border-slate-100">ONLINE</button>
+             <button className="py-3 bg-slate-50 text-slate-400 rounded-xl font-black text-[10px] border border-slate-100">BOTH</button>
           </div>
+      </div>
+      <div className="space-y-2 group">
+        <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest group-focus-within:text-accent transition-colors">Profile Photo</label>
+        <div className="border-2 border-dashed border-slate-100 rounded-xl p-4 text-center hover:border-accent/20 transition-all cursor-pointer bg-slate-50/50">
+          <Upload className="mx-auto text-slate-300 mb-1" size={20} />
+          <p className="text-[10px] font-bold text-slate-400">Click to upload photo</p>
+        </div>
       </div>
     </div>
   );
@@ -162,47 +169,52 @@ function Step2() {
         <OnboardingInput icon={<UserCircle size={18} />} label="Student Gender" placeholder="Male / Female" />
       </div>
       <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
-        <OnboardingInput icon={<School size={18} />} label="Current Class" placeholder="Class 10" />
-        <OnboardingInput icon={<Target size={18} />} label="Board" placeholder="CBSE / ICSE / State" />
+        <OnboardingInput icon={<School size={18} />} label="Current Class / Grade (1–12)" placeholder="Class 10" />
+        <OnboardingInput icon={<Target size={18} />} label="Board (CBSE/ICSE/State)" placeholder="e.g. CBSE" />
       </div>
-      <div className="space-y-2 group">
-        <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest group-focus-within:text-accent transition-colors">Subjects Needed</label>
-        <textarea 
-          placeholder="e.g. Mathematics, Physics, Chemistry..."
-          className="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-accent/20 focus:bg-white focus:ring-0 transition-all font-bold text-primary text-sm placeholder:text-slate-300 min-h-[100px]"
-        />
+      <OnboardingInput icon={<Building size={18} />} label="School Name" placeholder="D.P.S Public School" />
+      <div className="space-y-4">
+        <OnboardingTextArea label="Subjects Needed" placeholder="e.g. Mathematics, Physics..." />
+        <OnboardingTextArea label="Weak Areas / Special Focus" placeholder="What should the tutor focus on?" />
+        <OnboardingTextArea label="Learning Goals" placeholder="What are the student's aims?" />
       </div>
     </div>
   );
 }
 
 function Step3() {
+  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-500">
       <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
         <OnboardingInput icon={<User size={18} />} label="Preferred Tutor Gender" placeholder="No preference" />
-        <OnboardingInput icon={<Wallet size={18} />} label="Monthly Budget (₹)" placeholder="e.g. 5000" type="number" />
+        <OnboardingInput icon={<Wallet size={18} />} label="Budget per Hour (₹)" placeholder="e.g. 500" type="number" />
+      </div>
+      <div>
+        <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest mb-3 block">Preferred Days (Mon–Sun)</label>
+        <div className="grid grid-cols-4 sm:grid-cols-7 gap-2">
+          {days.map(day => (
+            <button key={day} className="py-2.5 rounded-lg border-2 border-slate-50 text-[10px] font-black transition-all hover:border-accent/20 bg-slate-50/50 text-slate-400">
+              {day}
+            </button>
+          ))}
+        </div>
       </div>
       <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
-        <OnboardingInput icon={<Clock size={18} />} label="Preferred Time Slot" placeholder="Evening (4 PM - 7 PM)" />
-        <OnboardingInput icon={<Languages size={18} />} label="Languages Needed" placeholder="English, Hindi" />
+        <OnboardingInput icon={<Clock size={18} />} label="Preferred Time Slots" placeholder="Evening (4-7 PM)" />
+        <OnboardingInput icon={<Languages size={18} />} label="Languages Preferred" placeholder="English, Hindi" />
       </div>
       <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
         <div className="space-y-2">
-          <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest transition-colors">Need Demo Class?</label>
-          <div className="flex gap-4">
-             <button className="flex-1 py-3.5 bg-accent text-white rounded-xl font-black text-xs md:text-sm shadow-lg shadow-accent/20">YES</button>
-             <button className="flex-1 py-3.5 bg-slate-50 text-slate-400 rounded-xl font-black text-xs md:text-sm border border-slate-100">NO</button>
+          <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest transition-colors">Need Demo Class First?</label>
+          <div className="flex gap-2">
+             <button className="flex-1 py-3 bg-accent text-white rounded-xl font-black text-[10px] shadow-lg shadow-accent/20">YES</button>
+             <button className="flex-1 py-3 bg-slate-50 text-slate-400 rounded-xl font-black text-[10px] border border-slate-100">NO</button>
           </div>
         </div>
       </div>
-      <div className="space-y-2 group">
-        <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest group-focus-within:text-accent transition-colors">Any Special Requirements</label>
-        <textarea 
-          placeholder="e.g. Needs help with competitive exams..."
-          className="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-accent/20 focus:bg-white focus:ring-0 transition-all font-bold text-primary text-sm placeholder:text-slate-300 min-h-[80px]"
-        />
-      </div>
+      <OnboardingTextArea label="Any Special Requirements" placeholder="e.g. Needs help with competitive exams..." />
     </div>
   );
 }
@@ -216,9 +228,21 @@ function OnboardingInput({ icon, label, placeholder, type = 'text' }: any) {
         <input 
           type={type} 
           placeholder={placeholder}
-          className="w-full pl-12 pr-6 py-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-accent/20 focus:bg-white focus:ring-0 transition-all font-bold text-primary text-sm md:text-base placeholder:text-slate-300"
+          className="w-full pl-12 pr-6 py-3.5 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-accent/20 focus:bg-white focus:ring-0 transition-all font-bold text-primary text-xs md:text-sm placeholder:text-slate-300"
         />
       </div>
+    </div>
+  );
+}
+
+function OnboardingTextArea({ label, placeholder }: any) {
+  return (
+    <div className="space-y-2 group">
+      <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest group-focus-within:text-accent transition-colors">{label}</label>
+      <textarea 
+        placeholder={placeholder}
+        className="w-full p-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-accent/20 focus:bg-white focus:ring-0 transition-all font-bold text-primary text-xs placeholder:text-slate-300 min-h-[80px]"
+      />
     </div>
   );
 }

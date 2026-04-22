@@ -144,19 +144,19 @@ function Step1() {
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-500">
       <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
+        <OnboardingInput icon={<User size={18} />} label="Gender" placeholder="Male / Female / Other" />
+        <OnboardingInput icon={<Calendar size={18} />} label="Date of Birth" placeholder="DD/MM/YYYY" type="date" />
+      </div>
+      <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
         <OnboardingInput icon={<MapPin size={18} />} label="City" placeholder="Mumbai" />
         <OnboardingInput icon={<MapPin size={18} />} label="Area / Locality" placeholder="Andheri West" />
       </div>
-      <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
-        <OnboardingInput icon={<Languages size={18} />} label="Languages" placeholder="English, Hindi, Marathi" />
-        <OnboardingInput icon={<User size={18} />} label="Gender" placeholder="Male / Female" />
-      </div>
-      <OnboardingInput icon={<Calendar size={18} />} label="Date of Birth" placeholder="DD/MM/YYYY" type="date" />
+      <OnboardingInput icon={<Languages size={18} />} label="Languages Spoken" placeholder="English, Hindi, Marathi" />
       <div className="space-y-2 group">
         <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest group-focus-within:text-accent transition-colors">Profile Photo</label>
-        <div className="border-2 border-dashed border-slate-100 rounded-[1.5rem] p-8 md:p-12 text-center hover:border-accent/20 transition-all cursor-pointer bg-slate-50/50">
-          <Upload className="mx-auto text-slate-300 mb-2" size={32} />
-          <p className="text-xs font-bold text-slate-400">Click to upload your professional photo</p>
+        <div className="border-2 border-dashed border-slate-100 rounded-[1.5rem] p-6 md:p-10 text-center hover:border-accent/20 transition-all cursor-pointer bg-slate-50/50">
+          <Upload className="mx-auto text-slate-300 mb-2" size={24} />
+          <p className="text-[10px] font-bold text-slate-400">Upload your profile photo (Professional preferred)</p>
         </div>
       </div>
     </div>
@@ -167,28 +167,36 @@ function Step2() {
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-500">
       <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
-        <OnboardingInput icon={<BookOpen size={18} />} label="Subjects" placeholder="Mathematics, Science" />
-        <OnboardingInput icon={<GraduationCap size={18} />} label="Target Classes" placeholder="Class 9-12" />
+        <OnboardingInput icon={<BookOpen size={18} />} label="Subjects You Teach" placeholder="Mathematics, Science" />
+        <OnboardingInput icon={<GraduationCap size={18} />} label="Classes / Grades" placeholder="1-12, Degree" />
       </div>
       <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
-        <OnboardingInput icon={<Clock size={18} />} label="Experience (Years)" placeholder="e.g. 5" type="number" />
-        <OnboardingInput icon={<Wallet size={18} />} label="Hourly Rate (₹)" placeholder="e.g. 800" type="number" />
-      </div>
-      <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
-        <OnboardingInput icon={<User size={18} />} label="Preferred Student Gender" placeholder="Any" />
         <div className="space-y-2">
-          <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest group-focus-within:text-accent transition-colors">Free Demo Class?</label>
-          <div className="flex gap-4">
-             <button className="flex-1 py-3.5 bg-accent text-white rounded-xl font-black text-xs md:text-sm shadow-lg shadow-accent/20">YES</button>
-             <button className="flex-1 py-3.5 bg-slate-50 text-slate-400 rounded-xl font-black text-xs md:text-sm border border-slate-100">NO</button>
+          <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest transition-colors">Teaching Mode</label>
+          <div className="grid grid-cols-3 gap-2">
+             <button className="py-3 bg-accent text-white rounded-xl font-black text-[10px] shadow-lg shadow-accent/20">HOME</button>
+             <button className="py-3 bg-slate-50 text-slate-400 rounded-xl font-black text-[10px] border border-slate-100">ONLINE</button>
+             <button className="py-3 bg-slate-50 text-slate-400 rounded-xl font-black text-[10px] border border-slate-100">BOTH</button>
+          </div>
+        </div>
+        <OnboardingInput icon={<Clock size={18} />} label="Experience (Years)" placeholder="e.g. 5" type="number" />
+      </div>
+      <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
+        <OnboardingInput icon={<Wallet size={18} />} label="Hourly Rate (₹)" placeholder="e.g. 800" type="number" />
+        <div className="space-y-2">
+          <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest transition-colors">Demo Class Free?</label>
+          <div className="flex gap-2">
+             <button className="flex-1 py-3 bg-accent text-white rounded-xl font-black text-[10px] shadow-lg shadow-accent/20">YES</button>
+             <button className="flex-1 py-3 bg-slate-50 text-slate-400 rounded-xl font-black text-[10px] border border-slate-100">NO</button>
           </div>
         </div>
       </div>
+      <OnboardingInput icon={<User size={18} />} label="Preferred Student Gender" placeholder="Any" />
       <div className="space-y-2 group">
-        <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest group-focus-within:text-accent transition-colors">Short Bio</label>
+        <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest group-focus-within:text-accent transition-colors">Teaching Bio / About Yourself</label>
         <textarea 
-          placeholder="Tell us about your teaching methodology..."
-          className="w-full p-4 md:p-6 bg-slate-50 rounded-[1.5rem] md:rounded-[2rem] border-2 border-transparent focus:border-accent/20 focus:bg-white focus:ring-0 transition-all font-bold text-primary text-sm md:text-base placeholder:text-slate-300 min-h-[120px]"
+          placeholder="Tell us about your teaching style and background..."
+          className="w-full p-4 md:p-5 bg-slate-50 rounded-[1.5rem] border-2 border-transparent focus:border-accent/20 focus:bg-white focus:ring-0 transition-all font-bold text-primary text-xs md:text-sm placeholder:text-slate-300 min-h-[100px]"
         />
       </div>
     </div>
@@ -199,23 +207,24 @@ function Step3() {
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-500">
       <OnboardingInput icon={<GraduationCap size={18} />} label="Highest Qualification" placeholder="M.Sc. Physics" />
+      <OnboardingInput icon={<BookOpen size={18} />} label="Degree Name" placeholder="B.Ed / Specialized Degree" />
       <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
-        <OnboardingInput icon={<Building size={18} />} label="College / University" placeholder="IIT Bombay" />
+        <OnboardingInput icon={<Building size={18} />} label="College / University" placeholder="University of Mumbai" />
         <OnboardingInput icon={<Calendar size={18} />} label="Passing Year" placeholder="2020" />
       </div>
       <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
          <div className="space-y-2 group">
-          <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest group-focus-within:text-accent transition-colors">Degree Certificate</label>
-          <div className="border-2 border-dashed border-slate-100 rounded-2xl p-6 text-center hover:border-accent/20 transition-all cursor-pointer bg-slate-50/50">
-            <Upload className="mx-auto text-slate-300 mb-2" size={24} />
-            <p className="text-[10px] font-bold text-slate-400">PDF, JPG (Max 5MB)</p>
+          <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest group-focus-within:text-accent transition-colors">Upload Degree Certificate</label>
+          <div className="border-2 border-dashed border-slate-100 rounded-xl p-4 text-center hover:border-accent/20 transition-all cursor-pointer bg-slate-50/50">
+            <Upload className="mx-auto text-slate-300 mb-1" size={20} />
+            <p className="text-[9px] font-bold text-slate-400">PDF, JPG (Max 5MB)</p>
           </div>
         </div>
         <div className="space-y-2 group">
-          <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest group-focus-within:text-accent transition-colors">Aadhar / ID Proof</label>
-          <div className="border-2 border-dashed border-slate-100 rounded-2xl p-6 text-center hover:border-accent/20 transition-all cursor-pointer bg-slate-50/50">
-            <Upload className="mx-auto text-slate-300 mb-2" size={24} />
-            <p className="text-[10px] font-bold text-slate-400">Front & Back (Max 5MB)</p>
+          <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest group-focus-within:text-accent transition-colors">Upload Aadhar / ID Proof</label>
+          <div className="border-2 border-dashed border-slate-100 rounded-xl p-4 text-center hover:border-accent/20 transition-all cursor-pointer bg-slate-50/50">
+            <Upload className="mx-auto text-slate-300 mb-1" size={20} />
+            <p className="text-[9px] font-bold text-slate-400">Front & Back (Max 5MB)</p>
           </div>
         </div>
       </div>
@@ -225,33 +234,33 @@ function Step3() {
 
 function Step4() {
   const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-  const slots = ['Morning', 'Afternoon', 'Evening', 'Late Night'];
+  const slots = ['Morning', 'Afternoon', 'Evening'];
   
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-right-4 duration-500">
       <div>
-        <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest mb-4 block">Available Days</label>
-        <div className="grid grid-cols-4 sm:grid-cols-7 gap-2 md:gap-3">
+        <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest mb-3 block">Available Days (Mon–Sun)</label>
+        <div className="grid grid-cols-4 sm:grid-cols-7 gap-2">
           {days.map(day => (
-            <button key={day} className="py-3 rounded-xl border-2 border-slate-50 text-[10px] md:text-xs font-black transition-all hover:border-accent/20 bg-slate-50/50 text-slate-400">
+            <button key={day} className="py-2.5 rounded-lg border-2 border-slate-50 text-[10px] font-black transition-all hover:border-accent/20 bg-slate-50/50 text-slate-400">
               {day}
             </button>
           ))}
         </div>
       </div>
       <div>
-        <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest mb-4 block">Preferred Time Slots</label>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4">
+        <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest mb-3 block">Available Time Slots</label>
+        <div className="grid grid-cols-3 gap-2">
           {slots.map(slot => (
-            <button key={slot} className="py-4 rounded-xl border-2 border-slate-50 text-[10px] md:text-xs font-black transition-all hover:border-accent/20 bg-slate-50/50 text-slate-400">
+            <button key={slot} className="py-3 rounded-lg border-2 border-slate-50 text-[10px] font-black transition-all hover:border-accent/20 bg-slate-50/50 text-slate-400">
               {slot}
             </button>
           ))}
         </div>
       </div>
       <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
-        <OnboardingInput icon={<MapPin size={18} />} label="Travel Range (km)" placeholder="e.g. 10" type="number" />
-        <OnboardingInput icon={<User size={18} />} label="Max Students" placeholder="Individual / Batch" />
+        <OnboardingInput icon={<MapPin size={18} />} label="Can Travel Up To (km)" placeholder="e.g. 10" type="number" />
+        <OnboardingInput icon={<Users size={18} />} label="Max Students at a Time" placeholder="e.g. 1 (Individual)" />
       </div>
     </div>
   );
@@ -260,19 +269,19 @@ function Step4() {
 function Step5() {
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-500">
-      <OnboardingInput icon={<User size={18} />} label="Account Holder Name" placeholder="John Doe" />
+      <OnboardingInput icon={<User size={18} />} label="Account Holder Name" placeholder="Full Name as per Bank" />
+      <OnboardingInput icon={<Building size={18} />} label="Bank Name" placeholder="e.g. HDFC Bank" />
       <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
-        <OnboardingInput icon={<Building size={18} />} label="Bank Name" placeholder="HDFC Bank" />
+        <OnboardingInput icon={<CreditCard size={18} />} label="Account Number" placeholder="XXXXXXXXXXXX" type="password" />
         <OnboardingInput icon={<CreditCard size={18} />} label="IFSC Code" placeholder="HDFC0001234" />
       </div>
-      <OnboardingInput icon={<CreditCard size={18} />} label="Account Number" placeholder="XXXXXXXXX1234" type="password" />
-      <OnboardingInput icon={<Wallet size={18} />} label="UPI ID (Optional)" placeholder="john@okaxis" />
-      <div className="bg-primary/5 p-6 rounded-[2rem] border border-primary/5">
+      <OnboardingInput icon={<Wallet size={18} />} label="UPI ID" placeholder="name@upi" />
+      <div className="bg-primary/5 p-5 md:p-6 rounded-[1.5rem] border border-primary/5">
         <h4 className="text-primary font-black text-sm mb-2 flex items-center gap-2">
-          <Wallet size={18} className="text-accent" /> Why we need this?
+          <ShieldCheck size={18} className="text-accent" /> Why bank details?
         </h4>
         <p className="text-slate-500 text-[10px] md:text-xs font-medium leading-relaxed">
-          TutorNest facilitates direct payments from parents. We use these details to transfer your 80% share every Monday automatically. Your data is encrypted and secure.
+          To automatically transfer your weekly earnings. TutorNest uses bank-grade encryption to secure your financial information.
         </p>
       </div>
     </div>
@@ -288,7 +297,7 @@ function OnboardingInput({ icon, label, placeholder, type = 'text' }: any) {
         <input 
           type={type} 
           placeholder={placeholder}
-          className="w-full pl-12 pr-6 py-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-accent/20 focus:bg-white focus:ring-0 transition-all font-bold text-primary text-sm md:text-base placeholder:text-slate-300"
+          className="w-full pl-12 pr-6 py-3.5 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-accent/20 focus:bg-white focus:ring-0 transition-all font-bold text-primary text-xs md:text-sm placeholder:text-slate-300"
         />
       </div>
     </div>
