@@ -25,6 +25,7 @@ import {
 import { mockParentRequests } from '@/data/mockRequests';
 import { mockParentTutors } from '@/data/mockStudents';
 import Link from 'next/link';
+import CompleteProfileBanner from '@/components/CompleteProfileBanner';
 
 export default function ParentDashboard() {
   const chartData = [
@@ -41,7 +42,8 @@ export default function ParentDashboard() {
     <div className="flex bg-slate-50 min-h-screen">
       <Sidebar role="parent" />
       
-      <main className="flex-1 p-4 md:p-12">
+      <main className="flex-1 p-4 md:p-12 relative pb-32">
+        <CompleteProfileBanner role="parent" completionPercentage={33} />
         {/* Header */}
         <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 md:mb-12">
           <div>

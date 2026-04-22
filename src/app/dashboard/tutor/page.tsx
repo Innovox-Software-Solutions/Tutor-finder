@@ -25,13 +25,15 @@ import {
 import { mockEarnings } from '@/data/mockEarnings';
 import { mockDemoRequests } from '@/data/mockRequests';
 import { mockStudents } from '@/data/mockStudents';
+import CompleteProfileBanner from '@/components/CompleteProfileBanner';
 
 export default function TutorDashboard() {
   return (
     <div className="flex bg-slate-50 min-h-screen">
       <Sidebar role="tutor" />
       
-      <main className="flex-1 p-4 md:p-12">
+      <main className="flex-1 p-4 md:p-12 relative pb-32">
+        <CompleteProfileBanner role="tutor" completionPercentage={40} />
         {/* Header */}
         <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 md:mb-12">
           <div>

@@ -5,6 +5,6 @@ export const mockStudents = [
 ];
 
 export const mockParentTutors = [
-  { id: '1', name: 'Rahul Sharma', subject: 'Mathematics' },
-  { id: '2', name: 'Priya Verma', subject: 'English' },
+  { id: '1', name: 'Rahul Sharma', subject: 'Mathematics', nextSession: 'Tomorrow, 05:00 PM' },
+  { id: '2', name: 'Priya Verma', subject: 'English', nextSession: 'Wed, 04:00 PM' },
 ];
