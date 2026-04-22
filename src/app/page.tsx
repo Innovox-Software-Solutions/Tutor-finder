@@ -45,25 +45,24 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-24 md:pt-44 pb-20 md:pb-40 overflow-hidden bg-primary">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,var(--accent-light)_0%,transparent_50%)] opacity-10 -z-0" />
-        <div className="absolute -bottom-48 -left-48 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] -z-0" />
+      <section className="relative pt-24 md:pt-44 pb-20 md:pb-40 overflow-hidden bg-background">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/20 rounded-full blur-[120px] -z-0 opacity-50" />
         
-        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-md text-slate-300 border border-white/10 px-4 py-2 rounded-full font-black text-[9px] md:text-sm mb-8 animate-fade-in hover:border-accent/40 transition-all cursor-default">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 text-center relative z-10 pt-10">
+          <div className="inline-flex items-center gap-3 bg-white/50 backdrop-blur-md text-primary border border-primary/10 px-4 py-2 rounded-full font-black text-[9px] md:text-sm mb-8 animate-fade-in hover:border-primary/20 transition-all cursor-default uppercase">
             <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             INDIA'S MOST FAIR TUTORING PLATFORM
           </div>
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white leading-[1.05] mb-8 tracking-tighter text-balance">
-            Find Perfect Tutors <br /> 
-            <span className="text-accent underline decoration-white/10 uppercase italic">Without the Hike</span>
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-primary leading-[1.05] mb-8 tracking-tighter text-balance">
+            Update your skills <br /> 
+            <span className="text-accent underline decoration-primary/5 uppercase italic">without limits</span>
           </h1>
-          <p className="text-xs md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed text-balance font-medium px-4">
-            Most platforms take 50% from teachers. We take only <span className="text-white font-bold">20%</span>. Better pay for tutors, better rates for students.
+          <p className="text-xs md:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed text-balance font-medium px-4">
+            Most platforms take 50% from teachers. We take only <span className="text-primary font-bold">20%</span>. Better pay for tutors, better rates for students.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 px-4">
-            <Link href="/auth" className="group w-full sm:w-auto premium-gradient text-white px-8 md:px-14 py-4 md:py-6 rounded-full font-black text-sm md:text-xl shadow-[0_20px_50px_rgba(255,107,44,0.3)] hover:scale-105 transition-all flex items-center justify-center gap-3 active:scale-[0.98] cursor-pointer">
-              GET STARTED NOW <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+            <Link href="/auth" className="group w-full sm:w-auto premium-gradient text-white px-10 md:px-14 py-4 md:py-8 rounded-full font-black text-base md:text-xl shadow-primary-glow hover:scale-105 transition-all flex items-center justify-center gap-4 active:scale-[0.98] cursor-pointer">
+              GET STARTED NOW <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
             </Link>
           </div>
         </div>
@@ -217,23 +216,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Tutors */}
-      <section className="py-16 md:py-32">
+      {/* Featured Educators */}
+      <section className="bg-secondary-bg py-20 md:py-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center sm:items-end gap-6 mb-12 px-4">
-            <div className="text-center sm:text-left">
-              <h2 className="text-2xl md:text-4xl font-black text-primary mb-2 text-balance leading-tight">Meet Our Top Rated Tutors</h2>
-              <p className="text-xs md:text-lg text-slate-500 font-medium">Verified professionals with a track record of excellence</p>
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-20 gap-8">
+            <div className="max-w-2xl px-4">
+              <h2 className="text-3xl md:text-6xl font-black text-primary mb-6 tracking-tighter uppercase">Featured Educators</h2>
+              <p className="text-sm md:text-lg text-slate-600 font-medium leading-relaxed">
+                Connect with highly-rated tutors verified by our community for results and reliability.
+              </p>
             </div>
-            <Link href="/find-tutor" className="group text-accent font-black text-sm md:text-lg flex items-center gap-2 bg-accent/5 px-6 py-2.5 rounded-full hover:bg-accent hover:text-white transition-all shadow-sm">
-              See more <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            <Link href="/find-tutor" className="group flex items-center gap-3 font-black text-primary hover:text-accent transition-colors uppercase tracking-widest text-xs md:text-base cursor-pointer px-4">
+              View all tutors <div className="bg-primary group-hover:bg-accent p-2 md:p-3 rounded-full text-white transition-colors"><ArrowRight size={20} /></div>
             </Link>
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {featuredTutors.map((tutor) => (
               <TutorCard key={tutor.id} tutor={tutor} />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Trust Quote / Banner */}
+      <section className="py-20 bg-background border-y border-primary/5">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <p className="text-xl md:text-3xl font-black text-slate-400 leading-tight tracking-tight uppercase">
+            Learn from more than <span className="text-primary italic font-black">160 member educators</span> across the city
+          </p>
         </div>
       </section>
 

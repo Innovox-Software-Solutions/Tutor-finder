@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fdfdfd;
-  --foreground: #0a0a0a;
-  --primary: #0f1012;
-  --primary-light: #1c1d21;
-  --accent: #ff6b2c;
-  --accent-light: #ff8c5a;
+  --background: #fff9e6;
+  --foreground: #1a202c;
+  --primary: #2b394e;
+  --primary-light: #3d4f66;
+  --accent: #ffcc00;
+  --accent-light: #ffeb3b;
+  --secondary-bg: #e6f5f2;
   --slate-50: #f8fafc;
   --slate-100: #f1f5f9;
   --slate-200: #e2e8f0;
   --slate-400: #94a3b8;
   --slate-500: #64748b;
   --slate-600: #475569;
-  --slate-900: #0f172a;
+  --slate-900: #1a202c;
 }
 
 @theme inline {
@@ -23,14 +24,15 @@
   --color-primary-light: var(--primary-light);
   --color-accent: var(--accent);
   --color-accent-light: var(--accent-light);
+  --color-secondary-bg: var(--secondary-bg);
   
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
   --radius-3xl: 2rem;
 
-  --shadow-premium: 0 20px 50px -12px rgba(0, 0, 0, 0.15);
-  --shadow-accent-glow: 0 20px 30px -10px rgba(255, 107, 44, 0.3);
-  --shadow-primary-glow: 0 20px 30px -10px rgba(15, 16, 18, 0.3);
+  --shadow-premium: 0 10px 40px -10px rgba(43, 57, 78, 0.1);
+  --shadow-accent-glow: 0 10px 20px -5px rgba(255, 204, 0, 0.3);
+  --shadow-primary-glow: 0 10px 20px -5px rgba(43, 57, 78, 0.2);
 }
 
 body {
@@ -53,15 +55,15 @@ body {
   }
 
   .premium-gradient {
-    background: linear-gradient(135deg, var(--accent) 0%, #ff8c5a 100%);
-  }
-
-  .dark-gradient {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   }
 
+  .dark-gradient {
+    background: linear-gradient(135deg, #1a2332 0%, var(--primary) 100%);
+  }
+
   .accent-gradient {
-    background: linear-gradient(135deg, var(--accent) 0%, #ffbb54 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, #ffd700 100%);
   }
 }
 
