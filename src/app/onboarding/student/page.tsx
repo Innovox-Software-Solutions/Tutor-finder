@@ -18,7 +18,9 @@ import {
   Languages,
   CheckCircle2,
   FileText,
-  UserCircle
+  UserCircle,
+  Upload,
+  Building
 } from 'lucide-react';
 import Link from 'next/link';
 

@@ -17,7 +17,9 @@ import {
   CheckCircle2,
   CreditCard,
   MapPin,
-  Languages
+  Languages,
+  ShieldCheck,
+  Users
 } from 'lucide-react';
 import Link from 'next/link';
 
