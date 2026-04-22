@@ -2,11 +2,11 @@
 
 :root {
   --background: #fdfdfd;
-  --foreground: #0f172a;
-  --primary: #1e3a5f;
-  --primary-light: #2c5282;
-  --accent: #f97316;
-  --accent-light: #fb923c;
+  --foreground: #0a0a0a;
+  --primary: #0f1012;
+  --primary-light: #1c1d21;
+  --accent: #ff6b2c;
+  --accent-light: #ff8c5a;
   --slate-50: #f8fafc;
   --slate-100: #f1f5f9;
   --slate-200: #e2e8f0;
@@ -28,9 +28,9 @@
   --radius-2xl: 1.5rem;
   --radius-3xl: 2rem;
 
-  --shadow-premium: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-  --shadow-accent-glow: 0 10px 15px -3px rgba(249, 115, 22, 0.2);
-  --shadow-primary-glow: 0 10px 15px -3px rgba(30, 58, 95, 0.2);
+  --shadow-premium: 0 20px 50px -12px rgba(0, 0, 0, 0.15);
+  --shadow-accent-glow: 0 20px 30px -10px rgba(255, 107, 44, 0.3);
+  --shadow-primary-glow: 0 20px 30px -10px rgba(15, 16, 18, 0.3);
 }
 
 body {
@@ -53,11 +53,15 @@ body {
   }
 
   .premium-gradient {
-    background: linear-gradient(135deg, var(--primary) 0%, #3b82f6 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, #ff8c5a 100%);
+  }
+
+  .dark-gradient {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   }
 
   .accent-gradient {
-    background: linear-gradient(135deg, var(--accent) 0%, #fbbf24 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, #ffbb54 100%);
   }
 }
 

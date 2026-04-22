@@ -224,15 +224,15 @@ function RoleCard({ icon, label, onClick }: { icon: any, label: string, onClick:
 
 function InputField({ icon, label, placeholder, type = 'text', name }: any) {
   return (
-    <div className="space-y-1.5 md:space-y-2 group">
-      <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest group-focus-within:text-accent transition-colors">{label}</label>
+    <div className="space-y-1.5 md:space-y-2 group text-left">
+      <label className="text-[10px] md:text-xs font-black text-slate-500 ml-5 uppercase tracking-widest group-focus-within:text-accent transition-colors">{label}</label>
       <div className="relative">
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-accent transition-colors">{icon}</div>
+        <div className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-accent transition-colors">{icon}</div>
         <input 
           type={type} 
           name={name}
           placeholder={placeholder}
-          className="w-full pl-12 pr-6 py-3 md:py-3.5 bg-slate-50 rounded-xl md:rounded-2xl border-2 border-transparent focus:border-accent/20 focus:bg-white focus:ring-0 transition-all font-bold text-primary placeholder:text-slate-300 text-sm md:text-base"
+          className="w-full pl-14 pr-8 py-4 md:py-5 bg-slate-50 rounded-full border-2 border-transparent focus:border-accent/20 focus:bg-white focus:ring-0 transition-all font-bold text-primary placeholder:text-slate-300 text-sm md:text-base shadow-inner"
         />
       </div>
     </div>

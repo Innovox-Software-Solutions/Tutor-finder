@@ -45,54 +45,48 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-20 md:pt-32 pb-16 md:pb-32 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-accent/5 -z-10" />
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10 animate-pulse" />
-        <div className="absolute bottom-0 -left-24 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10 animate-pulse" style={{ animationDelay: '2s' }} />
+      <section className="relative pt-24 md:pt-44 pb-20 md:pb-40 overflow-hidden bg-primary">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,var(--accent-light)_0%,transparent_50%)] opacity-10 -z-0" />
+        <div className="absolute -bottom-48 -left-48 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] -z-0" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-6 md:pt-16">
-          <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-3 py-1.5 md:px-4 md:py-2 rounded-full font-bold text-[10px] md:text-sm mb-6 md:mb-8 animate-bounce hover:bg-accent/20 transition-colors cursor-default">
-            <CheckCircle2 size={14} />
-            India's most fair tutoring platform
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-md text-slate-300 border border-white/10 px-4 py-2 rounded-full font-black text-[9px] md:text-sm mb-8 animate-fade-in hover:border-accent/40 transition-all cursor-default">
+            <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            INDIA'S MOST FAIR TUTORING PLATFORM
           </div>
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-primary leading-[1.1] mb-6 md:mb-8 text-balance">
-            Find the Perfect Home Tutor <br className="hidden md:block" /> 
-            <span className="text-accent underline decoration-primary/10 transition-colors hover:decoration-primary/30">Without Overpaying</span>
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white leading-[1.05] mb-8 tracking-tighter text-balance">
+            Find Perfect Tutors <br /> 
+            <span className="text-accent underline decoration-white/10 uppercase italic">Without the Hike</span>
           </h1>
-          <p className="text-sm md:text-xl text-slate-600 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed text-balance">
-            Connect with top-rated tutors in your city. We charge only 20% commission, so tutors earn more and you pay less.
+          <p className="text-xs md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed text-balance font-medium px-4">
+            Most platforms take 50% from teachers. We take only <span className="text-white font-bold">20%</span>. Better pay for tutors, better rates for students.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
-            <Link href="/auth" className="group w-full sm:w-auto premium-gradient text-white px-8 md:px-12 py-4 md:py-5 rounded-2xl font-black text-base md:text-xl shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all flex items-center justify-center gap-3 active:scale-[0.98]">
-              Get Started <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 px-4">
+            <Link href="/auth" className="group w-full sm:w-auto premium-gradient text-white px-8 md:px-14 py-4 md:py-6 rounded-full font-black text-sm md:text-xl shadow-[0_20px_50px_rgba(255,107,44,0.3)] hover:scale-105 transition-all flex items-center justify-center gap-3 active:scale-[0.98] cursor-pointer">
+              GET STARTED NOW <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
             </Link>
-            <div className="flex flex-col items-center sm:items-start text-xs md:text-base">
-              <p className="text-slate-400 font-bold">
-                Already have an account? <Link href="/auth" className="text-primary hover:underline underline-offset-4 decoration-2">Login here</Link>
-              </p>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Stats Bar */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 md:-mt-12 mb-16 md:mb-32">
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl md:rounded-3xl p-5 md:p-10 shadow-premium border border-white/20 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-          <div className="text-center">
-            <div className="text-2xl md:text-5xl font-black text-primary mb-1">500+</div>
-            <div className="text-[8px] md:text-xs font-bold text-slate-400 uppercase tracking-widest text-balance">Expert Tutors</div>
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 md:-mt-24 mb-16 md:mb-40 relative z-20">
+        <div className="bg-primary border border-white/10 rounded-[2.5rem] md:rounded-full p-6 md:p-14 shadow-2xl backdrop-blur-xl grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
+          <div className="text-center group">
+            <div className="text-2xl md:text-6xl font-black text-white mb-1 tracking-tighter group-hover:text-accent transition-colors">500+</div>
+            <div className="text-[8px] md:text-xs font-black text-slate-500 uppercase tracking-[0.2em]">EXPERT TUTORS</div>
           </div>
-          <div className="text-center border-l border-slate-100">
-            <div className="text-2xl md:text-5xl font-black text-primary mb-1">2000+</div>
-            <div className="text-[8px] md:text-xs font-bold text-slate-400 uppercase tracking-widest text-balance">Students</div>
+          <div className="text-center group border-l border-white/5 pl-2 md:pl-0">
+            <div className="text-2xl md:text-6xl font-black text-white mb-1 tracking-tighter group-hover:text-accent transition-colors">2000+</div>
+            <div className="text-[8px] md:text-xs font-black text-slate-500 uppercase tracking-[0.2em]">ACTIVE STUDENTS</div>
           </div>
-          <div className="text-center border-l border-slate-100">
-            <div className="text-2xl md:text-5xl font-black text-primary mb-1">10+</div>
-            <div className="text-[8px] md:text-xs font-bold text-slate-400 uppercase tracking-widest text-balance">Subjects</div>
+          <div className="text-center group border-l border-white/5 pl-2 md:pl-0">
+            <div className="text-2xl md:text-6xl font-black text-white mb-1 tracking-tighter group-hover:text-accent transition-colors">10+</div>
+            <div className="text-[8px] md:text-xs font-black text-slate-500 uppercase tracking-[0.2em]">CORE SUBJECTS</div>
           </div>
-          <div className="text-center border-l border-slate-100">
-            <div className="text-2xl md:text-5xl font-black text-accent mb-1 underline decoration-primary/10">20%</div>
-            <div className="text-[8px] md:text-xs font-bold text-slate-400 uppercase tracking-widest text-balance">Low Commission</div>
+          <div className="text-center group border-l border-white/5 pl-2 md:pl-0">
+            <div className="text-2xl md:text-6xl font-black text-accent mb-1 tracking-tighter animate-pulse">20%</div>
+            <div className="text-[8px] md:text-xs font-black text-slate-500 uppercase tracking-[0.2em]">LOW COMMISSION</div>
           </div>
         </div>
       </section>

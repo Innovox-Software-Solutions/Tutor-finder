@@ -25,31 +25,32 @@ export default function FindTutor() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-24">
         {/* Search Header */}
-        <div className="bg-white rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-premium border border-slate-100 mb-6 md:mb-12">
-          <div className="flex flex-col md:flex-row gap-3 md:gap-6 items-center">
+        <div className="bg-primary rounded-[3rem] p-4 md:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10 mb-8 md:mb-16 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-[80px] -z-0" />
+          <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center relative z-10">
             <div className="relative flex-1 w-full">
-              <Search className="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 text-slate-400 w-[18px] h-[18px] md:w-6 md:h-6" />
+              <Search className="absolute left-6 md:left-8 top-1/2 -translate-y-1/2 text-slate-500 w-[18px] h-[18px] md:w-6 md:h-6" />
               <input 
                 type="text" 
                 placeholder="Search subject or tutor..."
-                className="w-full pl-11 md:pl-14 pr-4 md:pr-6 py-3.5 md:py-5 bg-slate-50/50 rounded-xl md:rounded-2xl border-2 border-transparent focus:border-accent/20 focus:bg-white focus:ring-0 transition-all text-sm md:text-lg font-bold"
+                className="w-full pl-14 md:pl-18 pr-6 md:pr-8 py-4 md:py-6 bg-white/5 border-2 border-white/5 rounded-full focus:border-accent/30 focus:bg-white/10 focus:ring-0 transition-all text-sm md:text-lg font-bold text-white placeholder:text-slate-500 shadow-inner"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            <button className="w-full md:w-auto premium-gradient text-white px-8 md:px-10 py-3.5 md:py-5 rounded-xl md:rounded-2xl font-black text-sm md:text-lg shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
-              <Search className="w-4.5 h-4.5 md:w-6 md:h-6" /> Search
+            <button className="w-full md:w-auto premium-gradient text-white px-10 md:px-14 py-4 md:py-6 rounded-full font-black text-sm md:text-lg shadow-accent-glow hover:scale-105 transition-all active:scale-[0.98] flex items-center justify-center gap-3">
+              <Search className="w-5 h-5 md:w-6 md:h-6" /> SEARCH
             </button>
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-6 md:gap-12 relative">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-16 relative">
           {/* Mobile Filter Toggle */}
           <button 
             onClick={() => setShowFilters(!showFilters)}
-            className="lg:hidden flex items-center justify-center gap-2 bg-white border-2 border-slate-100 py-3 rounded-xl font-black text-xs md:text-sm text-primary sticky top-[4.5rem] z-30 shadow-lg active:scale-95 transition-all"
+            className="lg:hidden flex items-center justify-center gap-2 bg-primary text-white py-4 rounded-full font-black text-xs md:text-sm sticky top-[5.5rem] z-30 shadow-2xl active:scale-95 transition-all border border-white/10"
           >
-            <Filter size={16} />
+            <Filter size={16} className="text-accent" />
             {showFilters ? 'HIDE FILTERS' : 'SHOW FILTERS'}
           </button>
 
@@ -206,24 +207,24 @@ export default function FindTutor() {
             )}
 
             {/* Pagination */}
-            <div className="mt-8 md:mt-20 flex items-center justify-center gap-4">
-              <button className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl border-2 border-slate-50 text-slate-400 hover:text-primary hover:border-primary transition-all active:scale-90 flex items-center justify-center">
-                <ChevronLeft size={20} />
+            <div className="mt-16 md:mt-24 flex items-center justify-center gap-4">
+              <button className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-slate-100 text-slate-400 hover:text-primary hover:border-primary transition-all active:scale-90 flex items-center justify-center shadow-sm">
+                <ChevronLeft size={24} />
               </button>
-              <div className="flex gap-2">
+              <div className="flex gap-2.5">
                  {[1, 2, 3].map((p, idx) => (
                    <button 
                      key={idx} 
-                     className={`w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl font-black text-xs md:text-base transition-all ${p === 1 ? 'premium-gradient text-white shadow-lg' : 'text-slate-600 hover:bg-slate-50 border-2 border-transparent hover:border-slate-100'}`}
+                     className={`w-12 h-12 md:w-14 md:h-14 rounded-full font-black text-xs md:text-sm transition-all ${p === 1 ? 'premium-gradient text-white shadow-accent-glow' : 'text-slate-400 hover:bg-slate-50 border-2 border-transparent hover:border-slate-100'}`}
                    >
                      {p}
                    </button>
                  ))}
-                 <span className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-slate-400 font-bold">...</span>
-                 <button className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl font-black text-xs md:text-base text-slate-600 hover:bg-slate-50 border-2 border-transparent hover:border-slate-100">12</button>
+                 <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center text-slate-300 font-bold">...</div>
+                 <button className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-slate-100 text-slate-400 font-black text-xs md:text-sm hover:border-primary transition-all">12</button>
               </div>
-              <button className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl border-2 border-slate-50 text-slate-400 hover:text-primary hover:border-primary transition-all active:scale-90 flex items-center justify-center">
-                <ChevronRight size={20} />
+              <button className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-slate-100 text-slate-400 hover:text-primary hover:border-primary transition-all active:scale-90 flex items-center justify-center shadow-sm">
+                <ChevronRight size={24} />
               </button>
             </div>
           </div>
