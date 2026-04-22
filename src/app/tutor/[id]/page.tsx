@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { mockTutors } from '@/data/mockTutors';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
 import { 
@@ -18,13 +18,15 @@ import {
   Share2,
   Heart,
   MessageCircle,
-  AlertCircle
+  AlertCircle,
+  ChevronLeft
 } from 'lucide-react';
 
 export default function TutorProfile() {
   const { id } = useParams();
   const tutor = mockTutors.find(t => t.id === id) || mockTutors[0];
   const [selectedDays, setSelectedDays] = useState<string[]>([]);
+  const router = useRouter();
 
   const toggleDay = (day: string) => {
     setSelectedDays(prev => 
@@ -33,15 +35,40 @@ export default function TutorProfile() {
   };
 
   return (
-    <main className="min-h-screen bg-[#fdfdfd] selection:bg-accent selection:text-white">
-      <Navbar />
+    <main className="min-h-screen bg-background selection:bg-accent selection:text-white pb-20">
+      {/* Profile Header */}
+      <header className="fixed top-0 left-0 w-full z-50 px-4 md:px-8 py-4 pointer-events-none">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <button 
+            onClick={() => router.back()}
+            className="w-12 h-12 md:w-14 md:h-14 bg-white rounded-full shadow-premium border border-slate-100 flex items-center justify-center text-primary hover:text-accent hover:scale-105 active:scale-95 transition-all pointer-events-auto"
+          >
+            <ChevronLeft size={24} strokeWidth={3} />
+          </button>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-24">
+          <div className="bg-white/90 backdrop-blur-md px-6 py-2.5 rounded-full shadow-premium border border-slate-100 flex items-center justify-center md:hidden pointer-events-auto">
+             <Link href="/" className="text-sm font-black text-primary">
+              Ghar<span className="text-accent">Guru</span>
+            </Link>
+          </div>
+
+          <div className="hidden md:flex gap-3 pointer-events-auto">
+            <button className="w-14 h-14 bg-white rounded-full shadow-premium border border-slate-100 flex items-center justify-center text-slate-400 hover:text-accent transition-all">
+              <Share2 size={20} />
+            </button>
+            <button className="w-14 h-14 bg-white rounded-full shadow-premium border border-slate-100 flex items-center justify-center text-slate-400 hover:text-red-500 transition-all">
+              <Heart size={20} />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-32">
         <div className="flex flex-col lg:flex-row gap-6 md:gap-12">
           {/* Main Content */}
           <div className="flex-1 space-y-6 md:space-y-12">
             {/* Header Card */}
-            <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-5 md:p-10 shadow-premium border border-slate-100/50 flex flex-col md:flex-row gap-6 md:gap-10 relative overflow-hidden">
+            <div className="bg-white rounded-[2.5rem] p-5 md:p-8 shadow-premium border border-slate-100/50 flex flex-col md:flex-row gap-6 md:gap-10 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-0 translate-x-1/2 -translate-y-1/2" />
               
               <div className="relative w-full md:w-72 h-64 md:h-80 rounded-2xl md:rounded-3xl overflow-hidden shrink-0 shadow-lg z-10 bg-slate-100">

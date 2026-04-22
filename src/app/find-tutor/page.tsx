@@ -45,14 +45,17 @@ export default function FindTutor() {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8 md:gap-16 relative">
-          {/* Mobile Filter Toggle */}
-          <button 
-            onClick={() => setShowFilters(!showFilters)}
-            className="lg:hidden flex items-center justify-center gap-2 bg-primary text-white py-4 rounded-full font-black text-xs md:text-sm sticky top-[6rem] z-30 shadow-2xl active:scale-95 transition-all border border-white/10"
-          >
-            <Filter size={16} className="text-accent" />
-            {showFilters ? 'HIDE FILTERS' : 'SHOW FILTERS'}
-          </button>
+          {/* Mobile Filter FAB */}
+          <div className="lg:hidden fixed bottom-8 left-0 w-full flex justify-center z-50 px-6">
+            <button 
+              onClick={() => setShowFilters(!showFilters)}
+              className="flex items-center justify-center gap-3 bg-primary/90 backdrop-blur-xl text-white px-8 py-4 rounded-full font-black text-sm shadow-[0_20px_50px_rgba(0,0,0,0.4)] border border-white/20 active:scale-95 transition-all w-full max-w-[280px] uppercase tracking-widest"
+            >
+              <Filter size={18} className="text-accent" />
+              {showFilters ? 'HIDE FILTERS' : 'SHOW FILTERS'}
+            </button>
+          </div>
+
 
           {/* Filter Sidebar */}
           <aside className={`
