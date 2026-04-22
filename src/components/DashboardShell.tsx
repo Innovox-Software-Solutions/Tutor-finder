@@ -1,7 +1,16 @@
 'use client';
 
 import Sidebar from '@/components/Sidebar';
-import { Bell, Search } from 'lucide-react';
+import { 
+  Bell, 
+  Search, 
+  Home, 
+  Users, 
+  ClipboardList, 
+  Wallet, 
+  User 
+} from 'lucide-react';
+import Link from 'next/link';
 
 interface DashboardShellProps {
   children: React.ReactNode;
