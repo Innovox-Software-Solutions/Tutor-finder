@@ -24,26 +24,53 @@ export default function AuthPage() {
   const [showOtp, setShowOtp] = useState(false);
   const router = useRouter();
 
+  // JSON "Database" Logic
+  const getStoredUsers = () => {
+    if (typeof window === 'undefined') return [];
+    const users = localStorage.getItem('gharguru_users');
+    return users ? JSON.parse(users) : [];
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     
+    // Extract form data
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = Object.fromEntries(formData);
+    
     setTimeout(() => {
+      const users = getStoredUsers();
+      
       if (isLogin) {
-        // Automatically route to dashboard based on simulated account role
-        // For demo: if email contains 'tutor', go to tutor dashboard
-        const emailInput = (e.target as any).email?.value || '';
-        if (emailInput.includes('tutor')) {
-          router.push('/dashboard/tutor');
+        // Login Logic: Find user in JSON array
+        const user = users.find((u: any) => u.email === data.email && u.password === data.password);
+        
+        if (user) {
+          localStorage.setItem('gharguru_session', JSON.stringify(user));
+          router.push(user.role === 'tutor' ? '/dashboard/tutor' : '/dashboard/parent');
         } else {
-          router.push('/dashboard/parent');
+          setIsLoading(false);
+          alert('Invalid credentials. (Hint: Try signing up first in this demo)');
         }
       } else {
-        // Signup: Go to specific role dashboard
+        // Signup Logic: Save user to JSON array
+        if (users.find((u: any) => u.email === data.email)) {
+          setIsLoading(false);
+          alert('User with this email already exists!');
+          return;
+        }
+
+        const newUser = { ...data, id: Date.now(), role };
+        const updatedUsers = [...users, newUser];
+        localStorage.setItem('gharguru_users', JSON.stringify(updatedUsers));
+        localStorage.setItem('gharguru_session', JSON.stringify(newUser));
+        
         router.push(role === 'tutor' ? '/dashboard/tutor' : '/dashboard/parent');
       }
     }, 1500);
   };
+
 
   return (
     <main className="min-h-screen flex items-center justify-center bg-[#fdfdfd] p-3 md:p-8 py-4 md:py-20 selection:bg-accent selection:text-white">
@@ -139,7 +166,7 @@ export default function AuthPage() {
                 <form onSubmit={handleSubmit} className="space-y-3.5 md:space-y-4">
                   {!isLogin && (
                     <div className="space-y-3 md:space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
-                      <InputField icon={<User size={18} />} label="Full Name" placeholder="John Doe" />
+                      <InputField icon={<User size={18} />} label="Full Name" placeholder="John Doe" name="fullName" />
                       <div className="relative">
                         <InputField icon={<Phone size={18} />} label="Phone Number" placeholder="+91 98765 43210" name="phone" />
                         <button 
@@ -152,17 +179,17 @@ export default function AuthPage() {
                       </div>
                       {showOtp && (
                         <div className="animate-in zoom-in duration-300">
-                           <InputField icon={<ShieldCheck size={18} />} label="Enter 6-digit OTP" placeholder="_ _ _ _ _ _" />
+                           <InputField icon={<ShieldCheck size={18} />} label="Enter 6-digit OTP" placeholder="_ _ _ _ _ _" name="otp" />
                         </div>
                       )}
                     </div>
                   )}
                   
                   <InputField icon={<Mail size={18} />} label="Email Address" placeholder="name@example.com" type="email" name="email" />
-                  <InputField icon={<Lock size={18} />} label="Password" placeholder="••••••••" type="password" />
+                  <InputField icon={<Lock size={18} />} label="Password" placeholder="••••••••" type="password" name="password" />
                   
                   {!isLogin && (
-                    <InputField icon={<Lock size={18} />} label="Confirm Password" placeholder="••••••••" type="password" />
+                    <InputField icon={<Lock size={18} />} label="Confirm Password" placeholder="••••••••" type="password" name="confirmPassword" />
                   )}
 
                   {isLogin && (

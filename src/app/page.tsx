@@ -45,7 +45,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-24 md:pt-44 pb-20 md:pb-40 overflow-hidden bg-background">
+      <section className="relative pt-32 md:pt-44 pb-20 md:pb-40 overflow-hidden bg-background">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/20 rounded-full blur-[120px] -z-0 opacity-50" />
         
         <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 text-center relative z-10 pt-10">

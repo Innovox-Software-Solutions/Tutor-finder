@@ -20,25 +20,25 @@ export default function FindTutor() {
   );
 
   return (
-    <main className="min-h-screen bg-[#fdfdfd] selection:bg-accent selection:text-white">
+    <main className="min-h-screen bg-background selection:bg-accent selection:text-white">
       <Navbar />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-44 pb-20">
         {/* Search Header */}
-        <div className="bg-primary rounded-[3rem] p-4 md:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10 mb-8 md:mb-16 relative overflow-hidden">
+        <div className="bg-primary rounded-[3rem] p-4 md:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10 mb-10 md:mb-20 relative overflow-hidden max-w-5xl mx-auto">
           <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-[80px] -z-0" />
-          <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center relative z-10">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-4 items-center relative z-10">
             <div className="relative flex-1 w-full">
               <Search className="absolute left-6 md:left-8 top-1/2 -translate-y-1/2 text-slate-500 w-[18px] h-[18px] md:w-6 md:h-6" />
               <input 
                 type="text" 
                 placeholder="Search subject or tutor..."
-                className="w-full pl-14 md:pl-18 pr-6 md:pr-8 py-4 md:py-6 bg-white/5 border-2 border-white/5 rounded-full focus:border-accent/30 focus:bg-white/10 focus:ring-0 transition-all text-sm md:text-lg font-bold text-white placeholder:text-slate-500 shadow-inner"
+                className="w-full pl-14 md:pl-18 pr-6 md:pr-8 py-4 md:py-5 bg-white/5 border-2 border-white/5 rounded-full focus:border-accent/30 focus:bg-white/10 focus:ring-0 transition-all text-sm md:text-lg font-bold text-white placeholder:text-slate-500 shadow-inner"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            <button className="w-full md:w-auto premium-gradient text-white px-10 md:px-14 py-4 md:py-6 rounded-full font-black text-sm md:text-lg shadow-accent-glow hover:scale-105 transition-all active:scale-[0.98] flex items-center justify-center gap-3">
+            <button className="w-full md:w-auto premium-gradient text-white px-10 md:px-14 py-4 md:py-5 rounded-full font-black text-xs md:text-sm shadow-accent-glow hover:scale-105 transition-all active:scale-[0.98] flex items-center justify-center gap-3 uppercase tracking-widest">
               <Search className="w-5 h-5 md:w-6 md:h-6" /> SEARCH
             </button>
           </div>
@@ -48,7 +48,7 @@ export default function FindTutor() {
           {/* Mobile Filter Toggle */}
           <button 
             onClick={() => setShowFilters(!showFilters)}
-            className="lg:hidden flex items-center justify-center gap-2 bg-primary text-white py-4 rounded-full font-black text-xs md:text-sm sticky top-[5.5rem] z-30 shadow-2xl active:scale-95 transition-all border border-white/10"
+            className="lg:hidden flex items-center justify-center gap-2 bg-primary text-white py-4 rounded-full font-black text-xs md:text-sm sticky top-[6rem] z-30 shadow-2xl active:scale-95 transition-all border border-white/10"
           >
             <Filter size={16} className="text-accent" />
             {showFilters ? 'HIDE FILTERS' : 'SHOW FILTERS'}
