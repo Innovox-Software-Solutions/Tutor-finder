@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <h3 className="text-2xl font-bold">
-              Tutor<span className="text-accent">Nest</span>
+              Ghar<span className="text-accent">Guru</span>
             </h3>
             <p className="text-slate-300 leading-relaxed">
               India's fairest tutoring marketplace. Empowering teachers with fair earnings and students with quality education.
