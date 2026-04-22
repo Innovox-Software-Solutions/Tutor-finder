@@ -6,7 +6,7 @@ const CommissionTable = () => {
           <tr>
             <th className="px-6 py-4 text-sm font-bold text-slate-600">Metric</th>
             <th className="px-6 py-4 text-sm font-bold text-slate-400">Other Platforms</th>
-            <th className="px-6 py-4 text-sm font-bold text-accent">TutorNest</th>
+            <th className="px-6 py-4 text-sm font-bold text-accent">GharGuru</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-slate-100">

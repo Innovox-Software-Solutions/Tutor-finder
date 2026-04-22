@@ -47,7 +47,7 @@ export default function SelectRole() {
          <div className="bg-accent/10 p-4 md:p-5 rounded-2xl text-accent shadow-accent/5"><Star size={28} className="fill-accent" /></div>
          <div className="text-center sm:text-left">
             <h4 className="font-black text-primary text-lg md:text-xl mb-1">Fair Commission Policy</h4>
-            <p className="text-slate-500 font-medium text-xs md:text-base leading-relaxed">We only take 20% commission on teacher earnings. Both parents and tutors save money with TutorNest.</p>
+            <p className="text-slate-500 font-medium text-xs md:text-base leading-relaxed">We only take 20% commission on teacher earnings. Both parents and tutors save money with GharGuru.</p>
          </div>
       </div>
     </main>

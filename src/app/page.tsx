@@ -176,7 +176,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-10 md:gap-20 items-center">
             <div className="text-center lg:text-left">
               <h2 className="text-2xl md:text-4xl font-black text-primary mb-4 md:mb-6 leading-[1.1]">
-                Why Choose <span className="text-accent underline decoration-primary/20">TutorNest</span>?
+                Why Choose <span className="text-accent underline decoration-primary/20">GharGuru</span>?
               </h2>
               <p className="text-sm md:text-lg text-slate-600 mb-6 md:mb-8 leading-relaxed">
                 Most platforms charge up to 50% commission, forcing tutors to hike their prices and parents to pay more. We believe in a fair ecosystem where teachers get their due.
@@ -280,11 +280,11 @@ export default function Home() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-2xl md:text-4xl font-black text-primary mb-2 md:mb-4 leading-tight">Frequently Asked Questions</h2>
-            <p className="text-xs md:text-lg text-slate-500 font-medium">Everything you need to know about TutorNest</p>
+            <p className="text-xs md:text-lg text-slate-500 font-medium">Everything you need to know about GharGuru</p>
           </div>
           <div className="space-y-3 md:space-y-6">
             <Accordion 
-              q="Does TutorNest take a percentage from parents?" 
+              q="Does GharGuru take a percentage from parents?" 
               a="No, we charge 0% commission from parents. You only pay the hourly rate listed by the tutor." 
             />
             <Accordion 

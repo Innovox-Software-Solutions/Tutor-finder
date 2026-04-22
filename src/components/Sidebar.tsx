@@ -49,10 +49,10 @@ const Sidebar = ({ role }: SidebarProps) => {
     <aside className="w-80 bg-primary h-screen sticky top-0 flex flex-col p-8 text-white hidden lg:flex shadow-2xl border-r border-white/5">
       <div className="mb-12 px-4 flex items-center gap-3">
         <div className="w-10 h-10 premium-gradient rounded-xl flex items-center justify-center font-black text-white shadow-lg shadow-primary/20">
-          TN
+          GG
         </div>
         <Link href="/" className="text-2xl font-black tracking-tight">
-          Tutor<span className="text-accent underline decoration-white/20">Nest</span>
+          Ghar<span className="text-accent underline decoration-white/20">Guru</span>
         </Link>
       </div>
 

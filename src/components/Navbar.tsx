@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="flex justify-between h-20 items-center">
           <div className="flex items-center">
             <Link href="/" className="text-2xl md:text-3xl font-black text-primary tracking-tight transition-transform hover:scale-105 active:scale-95">
-              Tutor<span className="text-accent underline decoration-primary/10">Nest</span>
+              Ghar<span className="text-accent underline decoration-primary/10">Guru</span>
             </Link>
           </div>
           

@@ -38,7 +38,7 @@ export default function AuthPage() {
 
           <div className="relative z-10">
             <Link href="/" className="text-3xl font-black mb-16 block transition-transform hover:scale-105 active:scale-95 origin-left">
-              Tutor<span className="text-accent underline decoration-white/10">Nest</span>
+              Ghar<span className="text-accent underline decoration-white/10">Guru</span>
             </Link>
             <h1 className="text-5xl xl:text-6xl font-black leading-[1.1] mb-8 text-balance">
               {isLogin ? "Welcome Back to Fair Learning" : "Join the India's Fair Learning Move"}
@@ -71,7 +71,7 @@ export default function AuthPage() {
         <div className="p-6 md:p-16 lg:p-20 flex flex-col justify-center bg-white">
           <div className="lg:hidden mb-8">
             <Link href="/" className="text-xl font-black text-primary">
-              Tutor<span className="text-accent underline decoration-primary/10">Nest</span>
+              Ghar<span className="text-accent underline decoration-primary/10">Guru</span>
             </Link>
           </div>
 

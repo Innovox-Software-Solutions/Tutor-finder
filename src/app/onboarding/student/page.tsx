@@ -62,7 +62,7 @@ export default function StudentOnboarding() {
       {/* Header */}
       <div className="max-w-3xl w-full mb-8 flex justify-between items-center">
         <Link href="/" className="text-xl font-black text-primary">
-          Tutor<span className="text-accent underline decoration-primary/10">Nest</span>
+          Ghar<span className="text-accent underline decoration-primary/10">Guru</span>
         </Link>
         <div className="flex items-center gap-3">
           <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Progress</span>

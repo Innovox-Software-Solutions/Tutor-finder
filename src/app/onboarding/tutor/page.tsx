@@ -61,7 +61,7 @@ export default function TutorOnboarding() {
       {/* Header */}
       <div className="max-w-3xl w-full mb-8 flex justify-between items-center">
         <Link href="/" className="text-xl font-black text-primary">
-          Tutor<span className="text-accent underline decoration-primary/10">Nest</span>
+          Ghar<span className="text-accent underline decoration-primary/10">Guru</span>
         </Link>
         <div className="flex items-center gap-3">
           <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Progress</span>
@@ -296,7 +296,7 @@ function Step5() {
           <ShieldCheck size={18} className="text-accent" /> Why bank details?
         </h4>
         <p className="text-slate-500 text-[10px] md:text-xs font-medium leading-relaxed">
-          To automatically transfer your weekly earnings. TutorNest uses bank-grade encryption to secure your financial information.
+          To automatically transfer your weekly earnings. GharGuru uses bank-grade encryption to secure your financial information.
         </p>
       </div>
     </div>

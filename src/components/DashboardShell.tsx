@@ -30,7 +30,7 @@ export default function DashboardShell({ children, role, title, subtitle }: Dash
           <div className="flex items-center gap-4">
             <div className="lg:hidden">
               <Link href="/" className="text-xl font-black text-primary">
-                T<span className="text-accent">N</span>
+                Ghar<span className="text-accent">Guru</span>
               </Link>
             </div>
             <div className="hidden sm:block">
