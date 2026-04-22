@@ -41,106 +41,106 @@ export default function ParentDashboard() {
     <div className="flex bg-slate-50 min-h-screen">
       <Sidebar role="parent" />
       
-      <main className="flex-1 p-12">
+      <main className="flex-1 p-4 md:p-12">
         {/* Header */}
-        <header className="flex justify-between items-center mb-12">
+        <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 md:mb-12">
           <div>
-            <h1 className="text-3xl font-black text-primary">Parent Dashboard</h1>
-            <p className="text-slate-500 font-bold">Monitor your child's progress and manage tutors.</p>
+            <h1 className="text-2xl md:text-3xl font-black text-primary tracking-tight">Parent Dashboard</h1>
+            <p className="text-slate-500 font-bold text-xs md:text-base">Monitor your child's progress and manage tutors.</p>
           </div>
-          <div className="flex items-center gap-6">
-             <Link href="/find-tutor" className="bg-accent text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:opacity-90 shadow-lg shadow-accent/20 flex items-center gap-2">
-                <Search size={18} /> Find New Tutor
+          <div className="flex items-center gap-3 md:gap-6 w-full md:w-auto">
+             <Link href="/find-tutor" className="flex-1 md:flex-none justify-center bg-accent text-white px-6 py-3 rounded-xl font-black text-xs md:text-sm hover:opacity-90 shadow-lg shadow-accent/20 flex items-center gap-2">
+                <Search size={18} /> Find Tutor
              </Link>
-             <button className="relative w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm text-slate-400">
+             <button className="relative w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm text-slate-400 border border-slate-100">
                 <Bell size={20} />
-                <span className="absolute top-3 right-3 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white" />
+                <span className="absolute top-3 right-3 w-2 h-2 bg-red-500 rounded-full border-2 border-white" />
              </button>
-             <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center font-black text-white">S</div>
+             <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center font-black text-white shrink-0">S</div>
           </div>
         </header>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-           <StatCard label="Active Tutors" value="2" icon={<Users />} />
-           <StatCard label="Upcoming Sessions" value="4" icon={<Calendar />} trend="This week" />
-           <StatCard label="Total Spent" value="₹12,400" icon={<Wallet />} />
-           <StatCard label="Completed Sessions" value="28" icon={<Star />} trend="+4/week" />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-8 md:mb-12">
+           <StatCard label="Active" value="2" icon={<Users size={20} />} />
+           <StatCard label="Upcoming" value="4" icon={<Calendar size={20} />} trend="+4" />
+           <StatCard label="Spent" value="₹12.4k" icon={<Wallet size={20} />} />
+           <StatCard label="Total" value="28" icon={<Star size={20} />} />
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid lg:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
            {/* Sessions Chart */}
-           <div className="lg:col-span-2 bg-white p-10 rounded-[32px] border border-slate-100 shadow-sm">
-              <h3 className="text-xl font-bold text-primary mb-10">Learning Hours</h3>
-              <div className="h-80 w-full">
+           <div className="lg:col-span-2 bg-white p-6 md:p-10 rounded-[2rem] border border-slate-100 shadow-premium">
+              <h3 className="text-lg md:text-xl font-black text-primary mb-6 md:mb-10 uppercase tracking-widest text-[10px] md:text-xs">Learning Hours</h3>
+              <div className="h-64 md:h-80 w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={chartData}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                    <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{fill: '#94a3b8', fontSize: 12, fontWeight: 700}} />
-                    <YAxis axisLine={false} tickLine={false} tick={{fill: '#94a3b8', fontSize: 12, fontWeight: 700}} />
+                    <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{fill: '#94a3b8', fontSize: 10, fontWeight: 700}} />
+                    <YAxis axisLine={false} tickLine={false} tick={{fill: '#94a3b8', fontSize: 10, fontWeight: 700}} />
                     <Tooltip 
                       cursor={{fill: '#f8fafc'}}
                       contentStyle={{borderRadius: '16px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)'}}
                     />
-                    <Bar dataKey="sessions" fill="#1e3a5f" radius={[6, 6, 0, 0]} barSize={40} />
+                    <Bar dataKey="sessions" fill="#1e3a5f" radius={[4, 4, 0, 0]} barSize={30} />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
            </div>
 
            {/* Active Tutors List */}
-           <div className="bg-white p-10 rounded-[32px] border border-slate-100 shadow-sm">
-              <h3 className="text-xl font-bold text-primary mb-10">Your Tutors</h3>
-              <div className="space-y-6">
+           <div className="bg-white p-6 md:p-10 rounded-[2rem] border border-slate-100 shadow-premium">
+              <h3 className="text-lg md:text-xl font-black text-primary mb-6 md:mb-10 uppercase tracking-widest text-[10px] md:text-xs">Your Tutors</h3>
+              <div className="space-y-4 md:space-y-6">
                  {mockParentTutors.map(tutor => (
-                   <div key={tutor.id} className="p-6 bg-slate-50 rounded-2xl border border-slate-100 space-y-4">
+                   <div key={tutor.id} className="p-4 md:p-6 bg-slate-50 rounded-2xl border border-slate-100 space-y-4">
                       <div className="flex justify-between items-start">
-                         <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center font-bold text-white uppercase">{tutor.name[0]}</div>
+                         <div className="flex items-center gap-3 md:gap-4">
+                            <div className="w-10 h-10 md:w-12 md:h-12 bg-accent rounded-xl flex items-center justify-center font-black text-white uppercase text-xs md:text-base">{tutor.name[0]}</div>
                             <div>
-                               <div className="font-bold text-primary text-sm">{tutor.name}</div>
-                               <div className="text-xs text-slate-400 font-medium">{tutor.subject}</div>
+                               <div className="font-black text-primary text-xs md:text-sm">{tutor.name}</div>
+                               <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">{tutor.subject}</div>
                             </div>
                          </div>
-                         <button className="text-primary hover:text-accent transition-colors"><MessageCircle size={20} /></button>
+                         <button className="text-primary hover:text-accent transition-colors active:scale-90"><MessageCircle size={18} /></button>
                       </div>
-                      <div className="flex items-center gap-2 text-xs text-slate-500 font-bold bg-white p-3 rounded-xl border border-slate-100">
-                         <Clock size={16} className="text-accent" />
+                      <div className="flex items-center gap-2 text-[10px] text-slate-500 font-black bg-white p-2.5 rounded-xl border border-slate-100">
+                         <Clock size={14} className="text-accent" />
                          Next: {tutor.nextSession}
                       </div>
                    </div>
                  ))}
-                 <Link href="/find-tutor" className="flex items-center justify-center gap-2 text-sm font-black text-accent w-full py-4 rounded-xl border-2 border-dashed border-accent/20 hover:bg-accent/5 transition-all">
-                    Add New Tutor <ArrowRight size={18} />
+                 <Link href="/find-tutor" className="flex items-center justify-center gap-2 text-xs font-black text-accent w-full py-4 rounded-xl border-2 border-dashed border-accent/20 hover:bg-accent/5 transition-all">
+                    Add Tutor <ArrowRight size={16} />
                  </Link>
               </div>
            </div>
         </div>
 
         {/* Requests Table */}
-        <div className="bg-white p-10 rounded-[32px] border border-slate-100 shadow-sm">
-           <h3 className="text-xl font-bold text-primary mb-8">My Demo Requests</h3>
-           <div className="overflow-x-auto">
-              <table className="w-full">
+        <div className="bg-white p-6 md:p-10 rounded-[2rem] border border-slate-100 shadow-premium overflow-hidden">
+           <h3 className="text-lg md:text-xl font-black text-primary mb-6 md:mb-8 uppercase tracking-widest text-[10px] md:text-xs">Demo Requests</h3>
+           <div className="overflow-x-auto -mx-6 px-6">
+              <table className="w-full min-w-[500px]">
                  <thead>
-                    <tr className="text-left text-slate-400 text-xs font-black uppercase tracking-widest border-b border-slate-100">
-                       <th className="pb-6 px-4">Tutor Name</th>
-                       <th className="pb-6 px-4">Subject</th>
-                       <th className="pb-6 px-4">Request Date</th>
-                       <th className="pb-6 px-4">Status</th>
+                    <tr className="text-left text-slate-400 text-[10px] font-black uppercase tracking-widest border-b border-slate-100">
+                       <th className="pb-4 px-2">Tutor</th>
+                       <th className="pb-4 px-2">Subject</th>
+                       <th className="pb-4 px-2">Date</th>
+                       <th className="pb-4 px-2 text-right">Status</th>
                     </tr>
                  </thead>
                  <tbody className="divide-y divide-slate-50">
                     {mockParentRequests.map(req => (
-                      <tr key={req.id}>
-                         <td className="py-6 px-4 font-bold text-primary">{req.tutorName}</td>
-                         <td className="py-6 px-4 text-slate-500 font-medium">{req.subject}</td>
-                         <td className="py-6 px-4 text-slate-500 font-medium">{req.date}</td>
-                         <td className="py-6 px-4">
-                            <span className={`px-4 py-1.5 rounded-full text-xs font-black ${
-                              req.status === 'Accepted' ? 'bg-green-100 text-green-700' : 
-                              req.status === 'Rejected' ? 'bg-red-100 text-red-700' : 
-                              'bg-amber-100 text-amber-700'
+                      <tr key={req.id} className="group hover:bg-slate-50/50 transition-colors">
+                         <td className="py-4 px-2 font-black text-primary text-sm">{req.tutorName}</td>
+                         <td className="py-4 px-2 text-slate-500 font-bold text-xs">{req.subject}</td>
+                         <td className="py-4 px-2 text-slate-400 font-bold text-[10px]">{req.date}</td>
+                         <td className="py-4 px-2 text-right">
+                            <span className={`px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-tighter ${
+                              req.status === 'Accepted' ? 'bg-green-50 text-green-600 border border-green-100' : 
+                              req.status === 'Rejected' ? 'bg-red-50 text-red-600 border border-red-100' : 
+                              'bg-amber-50 text-amber-600 border border-amber-100'
                             }`}>
                                {req.status}
                             </span>

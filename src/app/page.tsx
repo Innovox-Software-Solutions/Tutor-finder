@@ -45,28 +45,28 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-24 md:pb-32 overflow-hidden">
+      <section className="relative pt-12 md:pt-20 pb-16 md:pb-32 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-accent/5 -z-10" />
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10 animate-pulse" />
         <div className="absolute bottom-0 -left-24 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10 animate-pulse" style={{ animationDelay: '2s' }} />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8 md:pt-16">
-          <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full font-bold text-xs md:text-sm mb-8 animate-bounce hover:bg-accent/20 transition-colors cursor-default">
-            <CheckCircle2 size={16} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-6 md:pt-16">
+          <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-3 py-1.5 md:px-4 md:py-2 rounded-full font-bold text-[10px] md:text-sm mb-6 md:mb-8 animate-bounce hover:bg-accent/20 transition-colors cursor-default">
+            <CheckCircle2 size={14} />
             India's most fair tutoring platform
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-primary leading-[1.1] mb-8 text-balance">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-primary leading-[1.1] mb-6 md:mb-8 text-balance">
             Find the Perfect Home Tutor <br className="hidden md:block" /> 
             <span className="text-accent underline decoration-primary/10 transition-colors hover:decoration-primary/30">Without Overpaying</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed text-balance">
+          <p className="text-sm md:text-xl text-slate-600 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed text-balance">
             Connect with top-rated tutors in your city. We charge only 20% commission, so tutors earn more and you pay less.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
-            <Link href="/auth" className="group w-full sm:w-auto premium-gradient text-white px-8 md:px-12 py-4 md:py-5 rounded-2xl font-black text-lg md:text-xl shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all flex items-center justify-center gap-3 active:scale-[0.98]">
-              Get Started <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
+            <Link href="/auth" className="group w-full sm:w-auto premium-gradient text-white px-8 md:px-12 py-4 md:py-5 rounded-2xl font-black text-base md:text-xl shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all flex items-center justify-center gap-3 active:scale-[0.98]">
+              Get Started <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
             </Link>
-            <div className="flex flex-col items-center sm:items-start text-sm md:text-base">
+            <div className="flex flex-col items-center sm:items-start text-xs md:text-base">
               <p className="text-slate-400 font-bold">
                 Already have an account? <Link href="/auth" className="text-primary hover:underline underline-offset-4 decoration-2">Login here</Link>
               </p>
@@ -76,72 +76,72 @@ export default function Home() {
       </section>
 
       {/* Stats Bar */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 md:-mt-12 mb-20 md:mb-32">
-        <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 md:p-10 shadow-premium border border-white/20 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 md:-mt-12 mb-16 md:mb-32">
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl md:rounded-3xl p-5 md:p-10 shadow-premium border border-white/20 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           <div className="text-center">
-            <div className="text-3xl md:text-5xl font-black text-primary mb-1">500+</div>
-            <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest text-balance">Expert Tutors</div>
+            <div className="text-2xl md:text-5xl font-black text-primary mb-1">500+</div>
+            <div className="text-[8px] md:text-xs font-bold text-slate-400 uppercase tracking-widest text-balance">Expert Tutors</div>
           </div>
           <div className="text-center border-l border-slate-100">
-            <div className="text-3xl md:text-5xl font-black text-primary mb-1">2000+</div>
-            <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest text-balance">Students</div>
+            <div className="text-2xl md:text-5xl font-black text-primary mb-1">2000+</div>
+            <div className="text-[8px] md:text-xs font-bold text-slate-400 uppercase tracking-widest text-balance">Students</div>
           </div>
           <div className="text-center border-l border-slate-100">
-            <div className="text-3xl md:text-5xl font-black text-primary mb-1">10+</div>
-            <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest text-balance">Subjects</div>
+            <div className="text-2xl md:text-5xl font-black text-primary mb-1">10+</div>
+            <div className="text-[8px] md:text-xs font-bold text-slate-400 uppercase tracking-widest text-balance">Subjects</div>
           </div>
           <div className="text-center border-l border-slate-100">
-            <div className="text-3xl md:text-5xl font-black text-accent mb-1 underline decoration-primary/10">20%</div>
-            <div className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest text-balance">Low Commission</div>
+            <div className="text-2xl md:text-5xl font-black text-accent mb-1 underline decoration-primary/10">20%</div>
+            <div className="text-[8px] md:text-xs font-bold text-slate-400 uppercase tracking-widest text-balance">Low Commission</div>
           </div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-20 md:py-32 bg-slate-50/50">
+      <section id="how-it-works" className="py-16 md:py-32 bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-primary mb-6">Simple Steps to Success</h2>
-            <p className="text-slate-500 max-w-xl mx-auto font-medium">Getting started is easier than you think. Choose your role and join the community.</p>
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-2xl md:text-5xl font-black text-primary mb-4 md:mb-6 leading-tight">Simple Steps to Success</h2>
+            <p className="text-xs md:text-lg text-slate-500 max-w-xl mx-auto font-medium">Getting started is easier than you think. Choose your role and join the community.</p>
           </div>
           
-          <div className="flex justify-center mb-16">
-            <div className="bg-white p-1.5 rounded-2xl border border-slate-200 flex shadow-sm">
+          <div className="flex justify-center mb-10 md:mb-16">
+            <div className="bg-white p-1 rounded-xl md:rounded-2xl border border-slate-200 flex shadow-sm">
               <button 
                 onClick={() => setActiveTab('parent')}
-                className={`px-6 md:px-10 py-3 rounded-xl font-bold transition-all text-sm md:text-base ${activeTab === 'parent' ? 'bg-primary text-white shadow-lg' : 'text-slate-500 hover:bg-slate-50'}`}
+                className={`px-4 md:px-10 py-2.5 md:py-3 rounded-lg md:rounded-xl font-bold transition-all text-xs md:text-base ${activeTab === 'parent' ? 'bg-primary text-white shadow-lg' : 'text-slate-500 hover:bg-slate-50'}`}
               >
                 For Parents
               </button>
               <button 
                 onClick={() => setActiveTab('tutor')}
-                className={`px-6 md:px-10 py-3 rounded-xl font-bold transition-all text-sm md:text-base ${activeTab === 'tutor' ? 'bg-primary text-white shadow-lg' : 'text-slate-500 hover:bg-slate-50'}`}
+                className={`px-4 md:px-10 py-2.5 md:py-3 rounded-lg md:rounded-xl font-bold transition-all text-xs md:text-base ${activeTab === 'tutor' ? 'bg-primary text-white shadow-lg' : 'text-slate-500 hover:bg-slate-50'}`}
               >
                 For Tutors
               </button>
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12">
             {activeTab === 'parent' ? (
               <>
                 <Step 
                   number="01" 
                   title="Search & Filter" 
                   desc="Find top-rated tutors near you based on subject, grade, and budget." 
-                  icon={<Users size={40} className="text-primary" />} 
+                  icon={<Users size={32} className="text-primary" />} 
                 />
                 <Step 
                   number="02" 
                   title="Free Demo Class" 
                   desc="Request a demo session with your preferred tutor to ensure the right fit." 
-                  icon={<UserRoundCheck size={40} className="text-primary" />} 
+                  icon={<UserRoundCheck size={32} className="text-primary" />} 
                 />
                 <Step 
                   number="03" 
                   title="Start Learning" 
                   desc="Confirm the tutor and start your regular sessions. Pay only for classes taken." 
-                  icon={<BookOpen size={40} className="text-primary" />} 
+                  icon={<BookOpen size={32} className="text-primary" />} 
                 />
               </>
             ) : (
@@ -150,19 +150,19 @@ export default function Home() {
                   number="01" 
                   title="Create Profile" 
                   desc="List your expertise, experience, and hourly rate on our platform." 
-                  icon={<Laptop size={40} className="text-primary" />} 
+                  icon={<Laptop size={32} className="text-primary" />} 
                 />
                 <Step 
                   number="02" 
                   title="Get Requests" 
                   desc="Respond to demo requests from parents and students in your area." 
-                  icon={<ArrowRight size={40} className="text-primary" />} 
+                  icon={<ArrowRight size={32} className="text-primary" />} 
                 />
                 <Step 
                   number="03" 
                   title="Earn Better" 
                   desc="Keep 80% of your earnings. We only take 20%, the lowest in India." 
-                  icon={<Calculator size={40} className="text-primary" />} 
+                  icon={<Calculator size={32} className="text-primary" />} 
                 />
               </>
             )}
@@ -171,27 +171,27 @@ export default function Home() {
       </section>
 
       {/* Commission Comparison */}
-      <section className="py-20 md:py-32">
+      <section className="py-16 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 md:gap-20 items-center">
             <div className="text-center lg:text-left">
-              <h2 className="text-3xl md:text-4xl font-black text-primary mb-6 leading-tight">
+              <h2 className="text-2xl md:text-4xl font-black text-primary mb-4 md:mb-6 leading-[1.1]">
                 Why Choose <span className="text-accent underline decoration-primary/20">TutorNest</span>?
               </h2>
-              <p className="text-base md:text-lg text-slate-600 mb-8 leading-relaxed">
+              <p className="text-sm md:text-lg text-slate-600 mb-6 md:mb-8 leading-relaxed">
                 Most platforms charge up to 50% commission, forcing tutors to hike their prices and parents to pay more. We believe in a fair ecosystem where teachers get their due.
               </p>
-              <div className="grid gap-4 max-w-md mx-auto lg:mx-0">
+              <div className="grid gap-3 md:gap-4 max-w-md mx-auto lg:mx-0 text-left">
                 {[
                   "Transparent pricing - No hidden fees",
                   "Direct communication with parents",
                   "Lowest platform fee in the market"
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100 group hover:border-green-100 hover:bg-green-50 transition-all">
+                  <div key={i} className="flex items-center gap-3 bg-slate-50 p-3.5 rounded-xl border border-slate-100 group hover:border-green-100 hover:bg-green-50 transition-all">
                     <div className="bg-green-100 p-1 rounded-full group-hover:bg-green-200 transition-colors">
-                      <CheckCircle2 size={18} className="text-green-600" />
+                      <CheckCircle2 size={16} className="text-green-600" />
                     </div>
-                    <span className="text-slate-900 font-bold text-sm md:text-base">{item}</span>
+                    <span className="text-slate-900 font-bold text-xs md:text-base">{item}</span>
                   </div>
                 ))}
               </div>
@@ -204,19 +204,19 @@ export default function Home() {
       </section>
 
       {/* Subjects Grid */}
-      <section className="py-20 md:py-32 bg-slate-50/50">
+      <section className="py-16 md:py-32 bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-primary mb-4">Subjects We Cover</h2>
-            <p className="text-slate-500 font-medium">Expert tutors for school, college, and competitive exams</p>
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-2xl md:text-4xl font-black text-primary mb-2">Subjects We Cover</h2>
+            <p className="text-xs md:text-lg text-slate-500 font-medium">Expert tutors for school, college, and competitive exams</p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-8">
             {subjects.map((s, idx) => (
-              <div key={idx} className="bg-white p-6 md:p-10 rounded-3xl border border-slate-100 hover:border-accent hover:shadow-premium hover:-translate-y-1 transition-all text-center group cursor-pointer">
-                <div className={`${s.color} w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform`}>
+              <div key={idx} className="bg-white p-5 md:p-10 rounded-[1.5rem] md:rounded-3xl border border-slate-100 hover:border-accent hover:shadow-premium hover:-translate-y-1 transition-all text-center group cursor-pointer">
+                <div className={`${s.color} w-12 h-12 md:w-20 md:h-20 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform`}>
                   {s.icon}
                 </div>
-                <span className="font-bold text-slate-900 text-base md:text-lg block">{s.name}</span>
+                <span className="font-bold text-slate-900 text-xs md:text-lg block capitalize">{s.name}</span>
               </div>
             ))}
           </div>
@@ -224,15 +224,15 @@ export default function Home() {
       </section>
 
       {/* Featured Tutors */}
-      <section className="py-20 md:py-32">
+      <section className="py-16 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center sm:items-end gap-6 mb-16 px-4">
+          <div className="flex flex-col sm:flex-row justify-between items-center sm:items-end gap-6 mb-12 px-4">
             <div className="text-center sm:text-left">
-              <h2 className="text-3xl md:text-4xl font-black text-primary mb-4 text-balance">Meet Our Top Rated Tutors</h2>
-              <p className="text-slate-500 font-medium">Verified professionals with a track record of excellence</p>
+              <h2 className="text-2xl md:text-4xl font-black text-primary mb-2 text-balance leading-tight">Meet Our Top Rated Tutors</h2>
+              <p className="text-xs md:text-lg text-slate-500 font-medium">Verified professionals with a track record of excellence</p>
             </div>
-            <Link href="/find-tutor" className="group text-accent font-black text-lg flex items-center gap-2 bg-accent/5 px-6 py-2.5 rounded-full hover:bg-accent hover:text-white transition-all shadow-sm">
-              See more <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            <Link href="/find-tutor" className="group text-accent font-black text-sm md:text-lg flex items-center gap-2 bg-accent/5 px-6 py-2.5 rounded-full hover:bg-accent hover:text-white transition-all shadow-sm">
+              See more <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
@@ -244,13 +244,13 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 md:py-32 bg-primary relative overflow-hidden">
+      <section className="py-16 md:py-32 bg-primary relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -z-0 translate-x-1/2 -translate-y-1/2" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -z-0 -translate-x-1/2 translate-y-1/2" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-16">What Our Community Says</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <h2 className="text-2xl md:text-5xl font-black text-white mb-10 md:mb-16 leading-tight">What Community Says</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
              <Testimonial 
                 role="Parent" 
                 name="Sanjay K." 
@@ -276,13 +276,13 @@ export default function Home() {
       </section>
 
       {/* FAQ Accordion */}
-      <section className="py-20 md:py-32">
+      <section className="py-16 md:py-32">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-primary mb-4 leading-tight">Frequently Asked Questions</h2>
-            <p className="text-slate-500 font-medium">Everything you need to know about TutorNest</p>
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-2xl md:text-4xl font-black text-primary mb-2 md:mb-4 leading-tight">Frequently Asked Questions</h2>
+            <p className="text-xs md:text-lg text-slate-500 font-medium">Everything you need to know about TutorNest</p>
           </div>
-          <div className="space-y-4 md:space-y-6">
+          <div className="space-y-3 md:space-y-6">
             <Accordion 
               q="Does TutorNest take a percentage from parents?" 
               a="No, we charge 0% commission from parents. You only pay the hourly rate listed by the tutor." 
@@ -306,13 +306,13 @@ export default function Home() {
 
 function Step({ number, title, desc, icon }: any) {
   return (
-    <div className="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm relative overflow-hidden group">
-      <div className="absolute top-0 right-0 p-8 text-6xl font-black text-slate-50 group-hover:text-primary/5 transition-colors -z-0">
+    <div className="bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-3xl border border-slate-100 shadow-sm relative overflow-hidden group">
+      <div className="absolute top-0 right-0 p-6 md:p-8 text-4xl md:text-6xl font-black text-slate-50 group-hover:text-primary/5 transition-colors -z-0">
         {number}
       </div>
-      <div className="mb-8 relative z-10">{icon}</div>
-      <h3 className="text-2xl font-bold text-primary mb-4 relative z-10">{title}</h3>
-      <p className="text-slate-500 leading-relaxed relative z-10">{desc}</p>
+      <div className="mb-6 md:mb-8 relative z-10">{icon}</div>
+      <h3 className="text-xl md:text-2xl font-bold text-primary mb-3 md:mb-4 relative z-10">{title}</h3>
+      <p className="text-xs md:text-base text-slate-500 leading-relaxed relative z-10">{desc}</p>
     </div>
   );
 }

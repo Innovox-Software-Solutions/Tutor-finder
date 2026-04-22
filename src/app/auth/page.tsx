@@ -20,8 +20,8 @@ export default function AuthPage() {
   };
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-[#fdfdfd] p-4 md:p-8 py-10 md:py-20 selection:bg-accent selection:text-white">
-      <div className="max-w-6xl w-full grid lg:grid-cols-2 bg-white rounded-[2rem] md:rounded-[3rem] shadow-premium overflow-hidden min-h-[600px] md:min-h-[750px] border border-slate-100/50">
+    <main className="min-h-screen flex items-center justify-center bg-[#fdfdfd] p-2 md:p-8 py-6 md:py-20 selection:bg-accent selection:text-white">
+      <div className="max-w-6xl w-full grid lg:grid-cols-2 bg-white rounded-[1.5rem] md:rounded-[3rem] shadow-premium overflow-hidden border border-slate-100/50">
         
         {/* Branding Side */}
         <div className="bg-primary p-12 md:p-16 text-white hidden lg:flex flex-col justify-between relative overflow-hidden">
@@ -61,75 +61,75 @@ export default function AuthPage() {
         </div>
 
         {/* Form Side */}
-        <div className="p-8 md:p-16 lg:p-20 flex flex-col justify-center bg-white relative">
-          <div className="lg:hidden absolute top-8 left-8">
-            <Link href="/" className="text-2xl font-black text-primary">
-              Tutor<span className="text-accent">Nest</span>
+        <div className="p-6 md:p-16 lg:p-20 flex flex-col justify-center bg-white">
+          <div className="lg:hidden mb-8">
+            <Link href="/" className="text-xl font-black text-primary">
+              Tutor<span className="text-accent underline decoration-primary/10">Nest</span>
             </Link>
           </div>
 
           <div className="max-w-md mx-auto w-full">
-            <div className="flex bg-slate-50 p-1.5 rounded-2xl mb-10 md:mb-12 border border-slate-100">
+            <div className="flex bg-slate-50 p-1 rounded-xl md:rounded-2xl mb-8 md:mb-16 border border-slate-100">
                <button 
                 onClick={() => setIsLogin(true)}
-                className={`flex-1 py-3 md:py-4 rounded-xl font-black text-sm transition-all ${isLogin ? 'bg-white text-primary shadow-lg ring-1 ring-slate-100' : 'text-slate-400 hover:text-primary'}`}
+                className={`flex-1 py-3 md:py-4 rounded-lg md:rounded-xl font-black text-xs md:text-sm transition-all ${isLogin ? 'bg-white text-primary shadow-lg ring-1 ring-slate-100' : 'text-slate-400 hover:text-primary'}`}
               >
                 LOGIN
               </button>
               <button 
                 onClick={() => setIsLogin(false)}
-                className={`flex-1 py-3 md:py-4 rounded-xl font-black text-sm transition-all ${!isLogin ? 'bg-white text-primary shadow-lg ring-1 ring-slate-100' : 'text-slate-400 hover:text-primary'}`}
+                className={`flex-1 py-3 md:py-4 rounded-lg md:rounded-xl font-black text-xs md:text-sm transition-all ${!isLogin ? 'bg-white text-primary shadow-lg ring-1 ring-slate-100' : 'text-slate-400 hover:text-primary'}`}
               >
                 SIGN UP
               </button>
             </div>
 
-            <div className="mb-10 group">
-              <h2 className="text-3xl md:text-4xl font-black text-primary mb-3 tracking-tight transition-all">
+            <div className="mb-8 group">
+              <h2 className="text-2xl md:text-4xl font-black text-primary mb-2 tracking-tight transition-all">
                 {isLogin ? 'Login' : 'Create Account'}
               </h2>
-              <p className="text-slate-500 font-bold text-sm md:text-base leading-relaxed">
-                {isLogin ? 'Enter your credentials to continue' : 'Join thousands of tutors and parents today'}
+              <p className="text-slate-500 font-bold text-xs md:text-base leading-relaxed">
+                {isLogin ? 'Enter credentials to continue' : 'Join thousands of tutors and parents today'}
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-3.5 md:space-y-5">
               {!isLogin && (
-                <div className="grid grid-cols-1 gap-4 md:gap-5 animate-in fade-in slide-in-from-top-2 duration-300">
-                  <InputField icon={<User size={20} />} label="Full Name" placeholder="John Doe" />
-                  <InputField icon={<Phone size={20} />} label="Phone Number" placeholder="+91 98765 43210" />
+                <div className="grid grid-cols-1 gap-3.5 md:gap-5 animate-in fade-in slide-in-from-top-2 duration-300">
+                  <InputField icon={<User size={18} />} label="Full Name" placeholder="John Doe" />
+                  <InputField icon={<Phone size={18} />} label="Phone Number" placeholder="+91 98765 43210" />
                 </div>
               )}
               
-              <InputField icon={<Mail size={20} />} label="Email Address" placeholder="name@example.com" type="email" />
-              <InputField icon={<Lock size={20} />} label="Password" placeholder="••••••••" type="password" />
+              <InputField icon={<Mail size={18} />} label="Email Address" placeholder="name@example.com" type="email" />
+              <InputField icon={<Lock size={18} />} label="Password" placeholder="••••••••" type="password" />
               
               {!isLogin && (
-                <InputField icon={<Lock size={20} />} label="Confirm Password" placeholder="••••••••" type="password" />
+                <InputField icon={<Lock size={18} />} label="Confirm Password" placeholder="••••••••" type="password" />
               )}
 
               {isLogin && (
-                <div className="text-right">
-                  <Link href="#" className="text-sm font-black text-accent hover:underline decoration-2">Forgot Password?</Link>
+                <div className="text-right pt-1">
+                  <Link href="#" className="text-[10px] md:text-sm font-black text-accent hover:underline decoration-2">Forgot Password?</Link>
                 </div>
               )}
 
               <button 
                 type="submit" 
                 disabled={isLoading}
-                className="w-full premium-gradient text-white py-4 md:py-5 rounded-2xl font-black text-lg md:text-xl shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all flex items-center justify-center gap-3 active:scale-[0.98] mt-8"
+                className="w-full premium-gradient text-white py-3.5 md:py-5 rounded-2xl font-black text-base md:text-xl shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all flex items-center justify-center gap-3 active:scale-[0.98] mt-6 md:mt-8"
               >
                 {isLoading ? (
-                   <div className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full animate-spin" />
+                   <div className="w-5 h-5 border-4 border-white/30 border-t-white rounded-full animate-spin" />
                 ) : (
-                  <>Continue <ArrowRight size={22} /></>
+                  <>Continue <ArrowRight size={20} /></>
                 )}
               </button>
             </form>
 
-            <div className="mt-10 md:mt-12 pt-8 border-t border-slate-100 text-center">
-               <p className="text-slate-400 font-black text-xs md:text-sm uppercase tracking-wider">
-                 Fair Commission Guarantee: <span className="text-accent underline decoration-2">Only 20%</span>
+            <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-slate-100 text-center">
+               <p className="text-slate-400 font-black text-[10px] md:text-sm uppercase tracking-wider">
+                 Fair commission: <span className="text-accent underline decoration-2">Only 20%</span>
                </p>
             </div>
           </div>
