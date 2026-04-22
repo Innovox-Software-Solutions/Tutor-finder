@@ -23,7 +23,7 @@ export default function FindTutor() {
     <main className="min-h-screen bg-[#fdfdfd] selection:bg-accent selection:text-white">
       <Navbar />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-24">
         {/* Search Header */}
         <div className="bg-white rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-premium border border-slate-100 mb-6 md:mb-12">
           <div className="flex flex-col md:flex-row gap-3 md:gap-6 items-center">
