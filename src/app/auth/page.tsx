@@ -20,20 +20,24 @@ export default function AuthPage() {
   };
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-slate-50 p-4 py-20">
-      <div className="max-w-6xl w-full grid lg:grid-cols-2 bg-white rounded-[40px] shadow-2xl overflow-hidden min-h-[750px]">
+    <main className="min-h-screen flex items-center justify-center bg-[#fdfdfd] p-4 md:p-8 py-10 md:py-20 selection:bg-accent selection:text-white">
+      <div className="max-w-6xl w-full grid lg:grid-cols-2 bg-white rounded-[2rem] md:rounded-[3rem] shadow-premium overflow-hidden min-h-[600px] md:min-h-[750px] border border-slate-100/50">
         
         {/* Branding Side */}
-        <div className="bg-primary p-16 text-white hidden lg:flex flex-col justify-between relative overflow-hidden">
+        <div className="bg-primary p-12 md:p-16 text-white hidden lg:flex flex-col justify-between relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary via-primary-light to-blue-900 opacity-90 -z-10" />
+          <div className="absolute -top-24 -left-24 w-96 h-96 bg-accent/20 rounded-full blur-[100px] animate-pulse" />
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-400/10 rounded-full blur-[80px]" />
+
           <div className="relative z-10">
-            <Link href="/" className="text-3xl font-black mb-12 block">
-              Tutor<span className="text-accent">Nest</span>
+            <Link href="/" className="text-3xl font-black mb-16 block transition-transform hover:scale-105 active:scale-95 origin-left">
+              Tutor<span className="text-accent underline decoration-white/10">Nest</span>
             </Link>
-            <h1 className="text-5xl font-black leading-tight mb-8">
+            <h1 className="text-5xl xl:text-6xl font-black leading-[1.1] mb-8 text-balance">
               {isLogin ? "Welcome Back to Fair Learning" : "Join the India's Fair Learning Move"}
             </h1>
-            <p className="text-slate-300 text-lg mb-12 leading-relaxed">
-              We empower educators and support parents by maintaining a transparent 20% commission model.
+            <p className="text-slate-300 text-lg xl:text-xl mb-12 leading-relaxed max-w-md text-balance">
+              We empower educators and support parents by maintaining a transparent <span className="text-accent font-black">20% commission</span> model.
             </p>
             <div className="space-y-6">
               {[
@@ -42,46 +46,56 @@ export default function AuthPage() {
                 'Verified tutor community',
                 'Direct parent-tutor connection'
               ].map(item => (
-                <div key={item} className="flex items-center gap-4 font-bold text-lg">
-                  <div className="bg-accent rounded-full p-1"><CheckCircle2 className="text-white" size={20} /></div>
-                  {item}
+                <div key={item} className="flex items-center gap-4 font-bold text-lg group cursor-default">
+                  <div className="bg-accent/20 backdrop-blur-md rounded-xl p-2 group-hover:bg-accent group-hover:scale-110 transition-all">
+                    <CheckCircle2 className="text-accent group-hover:text-white transition-colors" size={20} />
+                  </div>
+                  <span className="group-hover:translate-x-1 transition-transform">{item}</span>
                 </div>
               ))}
             </div>
           </div>
-          <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-accent/20 rounded-full blur-[100px]" />
+          <div className="relative z-10 pt-10 border-t border-white/10 italic text-slate-400 font-medium">
+            Helping 500+ tutors reach 2000+ students across India.
+          </div>
         </div>
 
         {/* Form Side */}
-        <div className="p-10 md:p-20 flex flex-col justify-center">
+        <div className="p-8 md:p-16 lg:p-20 flex flex-col justify-center bg-white relative">
+          <div className="lg:hidden absolute top-8 left-8">
+            <Link href="/" className="text-2xl font-black text-primary">
+              Tutor<span className="text-accent">Nest</span>
+            </Link>
+          </div>
+
           <div className="max-w-md mx-auto w-full">
-            <div className="flex bg-slate-100 p-1.5 rounded-2xl mb-12">
+            <div className="flex bg-slate-50 p-1.5 rounded-2xl mb-10 md:mb-12 border border-slate-100">
                <button 
                 onClick={() => setIsLogin(true)}
-                className={`flex-1 py-4 rounded-xl font-black text-sm transition-all ${isLogin ? 'bg-white text-primary shadow-lg' : 'text-slate-400 hover:text-primary'}`}
+                className={`flex-1 py-3 md:py-4 rounded-xl font-black text-sm transition-all ${isLogin ? 'bg-white text-primary shadow-lg ring-1 ring-slate-100' : 'text-slate-400 hover:text-primary'}`}
               >
                 LOGIN
               </button>
               <button 
                 onClick={() => setIsLogin(false)}
-                className={`flex-1 py-4 rounded-xl font-black text-sm transition-all ${!isLogin ? 'bg-white text-primary shadow-lg' : 'text-slate-400 hover:text-primary'}`}
+                className={`flex-1 py-3 md:py-4 rounded-xl font-black text-sm transition-all ${!isLogin ? 'bg-white text-primary shadow-lg ring-1 ring-slate-100' : 'text-slate-400 hover:text-primary'}`}
               >
                 SIGN UP
               </button>
             </div>
 
-            <div className="mb-10">
-              <h2 className="text-4xl font-black text-primary mb-2">
+            <div className="mb-10 group">
+              <h2 className="text-3xl md:text-4xl font-black text-primary mb-3 tracking-tight transition-all">
                 {isLogin ? 'Login' : 'Create Account'}
               </h2>
-              <p className="text-slate-500 font-bold">
+              <p className="text-slate-500 font-bold text-sm md:text-base leading-relaxed">
                 {isLogin ? 'Enter your credentials to continue' : 'Join thousands of tutors and parents today'}
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
               {!isLogin && (
-                <div className="grid grid-cols-1 gap-5">
+                <div className="grid grid-cols-1 gap-4 md:gap-5 animate-in fade-in slide-in-from-top-2 duration-300">
                   <InputField icon={<User size={20} />} label="Full Name" placeholder="John Doe" />
                   <InputField icon={<Phone size={20} />} label="Phone Number" placeholder="+91 98765 43210" />
                 </div>
@@ -96,14 +110,14 @@ export default function AuthPage() {
 
               {isLogin && (
                 <div className="text-right">
-                  <Link href="#" className="text-sm font-bold text-accent hover:underline">Forgot Password?</Link>
+                  <Link href="#" className="text-sm font-black text-accent hover:underline decoration-2">Forgot Password?</Link>
                 </div>
               )}
 
               <button 
                 type="submit" 
                 disabled={isLoading}
-                className="w-full bg-primary text-white py-5 rounded-2xl font-black text-xl hover:shadow-2xl hover:shadow-primary/30 transition-all flex items-center justify-center gap-3 active:scale-[0.98] mt-8"
+                className="w-full premium-gradient text-white py-4 md:py-5 rounded-2xl font-black text-lg md:text-xl shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all flex items-center justify-center gap-3 active:scale-[0.98] mt-8"
               >
                 {isLoading ? (
                    <div className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full animate-spin" />
@@ -113,9 +127,9 @@ export default function AuthPage() {
               </button>
             </form>
 
-            <div className="mt-12 pt-8 border-t border-slate-100 text-center">
-               <p className="text-slate-400 font-bold text-sm">
-                 TutorNest Fair Commission Guarantee: <span className="text-accent underline">Only 20%</span>
+            <div className="mt-10 md:mt-12 pt-8 border-t border-slate-100 text-center">
+               <p className="text-slate-400 font-black text-xs md:text-sm uppercase tracking-wider">
+                 Fair Commission Guarantee: <span className="text-accent underline decoration-2">Only 20%</span>
                </p>
             </div>
           </div>
@@ -127,14 +141,14 @@ export default function AuthPage() {
 
 function InputField({ icon, label, placeholder, type = 'text' }: any) {
   return (
-    <div className="space-y-2">
-      <label className="text-xs font-black text-slate-700 ml-1 uppercase tracking-widest">{label}</label>
+    <div className="space-y-2 group">
+      <label className="text-[10px] md:text-xs font-black text-slate-500 ml-1 uppercase tracking-widest group-focus-within:text-accent transition-colors">{label}</label>
       <div className="relative">
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">{icon}</div>
+        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-accent transition-colors">{icon}</div>
         <input 
           type={type} 
           placeholder={placeholder}
-          className="w-full pl-12 pr-6 py-4 bg-slate-100/50 rounded-2xl border-2 border-transparent focus:border-accent focus:bg-white focus:ring-0 transition-all font-bold text-primary"
+          className="w-full pl-12 pr-6 py-3.5 md:py-4 bg-slate-50 rounded-2xl border-2 border-transparent focus:border-accent/20 focus:bg-white focus:ring-0 transition-all font-bold text-primary placeholder:text-slate-300"
         />
       </div>
     </div>

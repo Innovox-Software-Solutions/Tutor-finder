@@ -212,7 +212,7 @@ export default function FindTutor() {
                   <ChevronLeft size={24} />
                 </button>
                 <div className="flex gap-2">
-                  {[1, 2, 3, '...', 12].map((p, idx) => (
+                                    {[1, 2, 3, '...', 12].map((p, idx) => (
                     <button 
                       key={idx} 
                       className={`w-12 h-12 rounded-2xl font-black transition-all ${p === 1 ? 'premium-gradient text-white shadow-lg' : 'text-slate-600 hover:bg-slate-50 border-2 border-transparent hover:border-slate-100'}`}
@@ -225,31 +225,6 @@ export default function FindTutor() {
                   <ChevronRight size={24} />
                 </button>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <Footer />
-    </main>
-  );
-}
-
-            {/* Pagination */}
-            <div className="mt-16 flex justify-center gap-4">
-              <button className="p-3 rounded-xl border border-slate-200 text-slate-400 hover:text-primary hover:border-primary transition-all">
-                <ChevronLeft size={24} />
-              </button>
-              <div className="flex gap-2">
-                {[1, 2, 3, '...', 12].map((p, idx) => (
-                  <button key={idx} className={`w-12 h-12 rounded-xl font-bold transition-all ${p === 1 ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-100 border border-transparent hover:border-slate-200'}`}>
-                    {p}
-                  </button>
-                ))}
-              </div>
-              <button className="p-3 rounded-xl border border-slate-200 text-slate-400 hover:text-primary hover:border-primary transition-all">
-                <ChevronRight size={24} />
-              </button>
             </div>
           </div>
         </div>

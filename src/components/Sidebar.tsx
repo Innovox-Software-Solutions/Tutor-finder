@@ -46,34 +46,45 @@ const Sidebar = ({ role }: SidebarProps) => {
   const menu = role === 'tutor' ? tutorMenu : parentMenu;
 
   return (
-    <aside className="w-80 bg-primary h-screen sticky top-0 flex flex-col p-8 text-white hidden lg:flex">
-      <div className="mb-12">
-        <Link href="/" className="text-2xl font-black">
-          Tutor<span className="text-accent">Nest</span>
+    <aside className="w-80 bg-primary h-screen sticky top-0 flex flex-col p-8 text-white hidden lg:flex shadow-2xl border-r border-white/5">
+      <div className="mb-12 px-4 flex items-center gap-3">
+        <div className="w-10 h-10 premium-gradient rounded-xl flex items-center justify-center font-black text-white shadow-lg shadow-primary/20">
+          TN
+        </div>
+        <Link href="/" className="text-2xl font-black tracking-tight">
+          Tutor<span className="text-accent underline decoration-white/20">Nest</span>
         </Link>
       </div>
 
-      <nav className="flex-1 space-y-2">
-        {menu.map((item) => (
-          <Link 
-            key={item.name} 
-            href={item.path}
-            className={`flex items-center gap-4 px-6 py-4 rounded-xl font-bold transition-all ${pathname === item.path ? 'bg-accent text-white shadow-lg shadow-accent/20' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
-          >
-            {item.icon}
-            {item.name}
-          </Link>
-        ))}
+      <nav className="flex-1 space-y-1">
+        {menu.map((item) => {
+          const isActive = pathname === item.path;
+          return (
+            <Link 
+              key={item.name} 
+              href={item.path}
+              className={`group flex items-center gap-4 px-6 py-4 rounded-2xl font-bold transition-all relative overflow-hidden ${isActive ? 'bg-accent text-white shadow-accent-glow' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
+            >
+              <div className={`transition-transform duration-300 ${isActive ? 'scale-110' : 'group-hover:scale-110'}`}>
+                {item.icon}
+              </div>
+              <span className="relative z-10">{item.name}</span>
+              {isActive && (
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-white rounded-r-full" />
+              )}
+            </Link>
+          );
+        })}
       </nav>
 
-      <div className="pt-8 border-t border-white/10 space-y-2">
-        <Link href="#" className="flex items-center gap-4 px-6 py-4 text-slate-400 hover:text-white font-bold rounded-xl transition-all">
+      <div className="pt-8 border-t border-white/10 space-y-1">
+        <Link href="#" className="flex items-center gap-4 px-6 py-4 text-slate-400 hover:text-white font-bold rounded-2xl transition-all hover:bg-white/5">
           <Bell size={22} /> Notifications
         </Link>
-        <Link href="#" className="flex items-center gap-4 px-6 py-4 text-slate-400 hover:text-white font-bold rounded-xl transition-all">
+        <Link href="#" className="flex items-center gap-4 px-6 py-4 text-slate-400 hover:text-white font-bold rounded-2xl transition-all hover:bg-white/5">
           <Settings size={22} /> Settings
         </Link>
-        <Link href="/login" className="flex items-center gap-4 px-6 py-4 text-red-400 hover:text-red-300 font-bold rounded-xl transition-all mt-4">
+        <Link href="/login" className="flex items-center gap-4 px-6 py-4 text-red-100/60 hover:text-red-400 font-bold rounded-2xl transition-all mt-4 hover:bg-red-500/10">
           <LogOut size={22} /> Logout
         </Link>
       </div>
