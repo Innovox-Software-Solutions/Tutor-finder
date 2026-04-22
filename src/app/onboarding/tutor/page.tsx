@@ -294,4 +294,3 @@ function OnboardingInput({ icon, label, placeholder, type = 'text' }: any) {
     </div>
   );
 }
-}
