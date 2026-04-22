@@ -28,7 +28,7 @@ export default function FindTutor() {
         <div className="bg-white rounded-2xl md:rounded-3xl p-3 md:p-8 shadow-premium border border-slate-100 mb-6 md:mb-12">
           <div className="flex flex-col md:flex-row gap-3 md:gap-6 items-center">
             <div className="relative flex-1 w-full">
-              <Search className="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 text-slate-400" size={18} md:size={24} />
+              <Search className="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 text-slate-400 w-[18px] h-[18px] md:w-6 md:h-6" />
               <input 
                 type="text" 
                 placeholder="Search subject or tutor..."
@@ -38,7 +38,7 @@ export default function FindTutor() {
               />
             </div>
             <button className="w-full md:w-auto premium-gradient text-white px-8 md:px-10 py-3.5 md:py-5 rounded-xl md:rounded-2xl font-black text-sm md:text-lg shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
-              <Search size={18} md:size={24} /> Search
+              <Search className="w-4.5 h-4.5 md:w-6 md:h-6" /> Search
             </button>
           </div>
         </div>
@@ -192,7 +192,7 @@ export default function FindTutor() {
             ) : (
               <div className="bg-white rounded-2xl md:rounded-3xl p-8 md:p-20 text-center border-2 border-dashed border-slate-100">
                 <div className="w-16 h-16 md:w-24 md:h-24 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 text-slate-300">
-                  <Search size={32} md:size={48} />
+                  <Search className="w-8 h-8 md:w-12 md:h-12" />
                 </div>
                 <h3 className="text-lg md:text-2xl font-black text-primary mb-1 md:mb-2 text-balance">No tutors found</h3>
                 <p className="text-xs md:text-base text-slate-500 font-bold max-w-sm mx-auto text-balance">Try clearing filters or search for another subject.</p>

@@ -54,17 +54,17 @@ export default function TutorProfile() {
                        <h1 className="text-2xl md:text-5xl font-black text-primary tracking-tight">{tutor.name}</h1>
                        {tutor.verified && (
                          <div className="bg-blue-50 p-1 rounded-lg border border-blue-100">
-                           <BadgeCheck className="text-blue-500" size={18} md:size={24} />
+                           <BadgeCheck className="text-blue-500 w-4.5 h-4.5 md:w-6 md:h-6" />
                          </div>
                        )}
                     </div>
                     <div className="flex flex-wrap items-center gap-3 text-slate-500 font-bold">
                        <div className="flex items-center gap-1.5 bg-slate-50 px-2.5 py-1 rounded-lg border border-slate-100">
-                         <MapPin size={14} md:size={18} className="text-primary" /> 
+                         <MapPin className="text-primary w-3.5 h-3.5 md:w-4.5 md:h-4.5" /> 
                          <span className="text-xs md:text-sm">{tutor.location}</span>
                        </div>
                        <div className="flex items-center gap-1.5 bg-amber-50 text-amber-700 px-2.5 py-1 rounded-lg border border-amber-100">
-                          <Star size={14} md:size={18} className="fill-amber-400 text-amber-400" />
+                          <Star className="fill-amber-400 text-amber-400 w-3.5 h-3.5 md:w-4.5 md:h-4.5" />
                           <span className="font-black text-xs md:text-sm">{tutor.rating}</span>
                           <span className="text-amber-500/60 font-bold text-[10px] md:text-xs">({tutor.reviews})</span>
                        </div>
