@@ -24,37 +24,28 @@ export default function FindTutor() {
       <Navbar />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-44 pb-20">
-        {/* Search Header */}
-        <div className="bg-primary rounded-[3rem] p-4 md:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10 mb-10 md:mb-20 relative overflow-hidden max-w-5xl mx-auto">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-[80px] -z-0" />
-          <div className="flex flex-col md:flex-row gap-4 md:gap-4 items-center relative z-10">
-            <div className="relative flex-1 w-full">
-              <Search className="absolute left-6 md:left-8 top-1/2 -translate-y-1/2 text-slate-500 w-[18px] h-[18px] md:w-6 md:h-6" />
-              <input 
-                type="text" 
-                placeholder="Search subject or tutor..."
-                className="w-full pl-14 md:pl-18 pr-6 md:pr-8 py-4 md:py-5 bg-white/5 border-2 border-white/5 rounded-full focus:border-accent/30 focus:bg-white/10 focus:ring-0 transition-all text-sm md:text-lg font-bold text-white placeholder:text-slate-500 shadow-inner"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-            <button className="w-full md:w-auto premium-gradient text-white px-10 md:px-14 py-4 md:py-5 rounded-full font-black text-xs md:text-sm shadow-accent-glow hover:scale-105 transition-all active:scale-[0.98] flex items-center justify-center gap-3 uppercase tracking-widest">
-              <Search className="w-5 h-5 md:w-6 md:h-6" /> SEARCH
-            </button>
+        {/* Integrated Search Bar */}
+        <div className="relative max-w-4xl mx-auto mb-10 md:mb-16 group z-10">
+          <div className="absolute left-6 md:left-8 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-accent transition-colors z-20">
+            <Search size={22} className="md:w-6 md:h-6" />
           </div>
+          <input 
+            type="text" 
+            placeholder="Search by subject, expertise or tutor name..."
+            className="w-full pl-16 md:pl-20 pr-16 md:pr-8 py-5 md:py-7 bg-primary text-white rounded-full border-2 border-white/5 focus:border-accent/40 focus:ring-0 transition-all text-sm md:text-xl font-bold shadow-[0_20px_50px_rgba(0,0,0,0.3)] placeholder:text-slate-500"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button 
+            onClick={() => setShowFilters(!showFilters)}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 p-2 lg:hidden active:scale-95 transition-all"
+            aria-label="Toggle Filters"
+          >
+            <Filter size={22} className={showFilters ? 'text-accent' : 'hover:text-white transition-colors'} />
+          </button>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8 md:gap-16 relative">
-          {/* Mobile Filter FAB */}
-          <div className="lg:hidden fixed bottom-8 left-0 w-full flex justify-center z-50 px-6">
-            <button 
-              onClick={() => setShowFilters(!showFilters)}
-              className="flex items-center justify-center gap-3 bg-primary/90 backdrop-blur-xl text-white px-8 py-4 rounded-full font-black text-sm shadow-[0_20px_50px_rgba(0,0,0,0.4)] border border-white/20 active:scale-95 transition-all w-full max-w-[280px] uppercase tracking-widest"
-            >
-              <Filter size={18} className="text-accent" />
-              {showFilters ? 'HIDE FILTERS' : 'SHOW FILTERS'}
-            </button>
-          </div>
 
 
           {/* Filter Sidebar */}

@@ -8,11 +8,19 @@ import { usePathname } from 'next/navigation';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [user, setUser] = useState<any>(null);
   const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
+    
+    // Auth Check
+    const session = localStorage.getItem('gharguru_session');
+    if (session) {
+      setUser(JSON.parse(session));
+    }
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -22,7 +30,11 @@ const Navbar = () => {
     { name: 'Find Tutor', href: '/find-tutor' },
   ];
 
-  const authLinks: { name: string, href: string, isButton?: boolean }[] = [
+  const dashboardUrl = user?.role === 'tutor' ? '/dashboard/tutor' : '/dashboard/parent';
+
+  const authLinks: { name: string, href: string, isButton?: boolean }[] = user ? [
+    { name: 'Dashboard', href: dashboardUrl, isButton: true },
+  ] : [
     { name: 'Become a Tutor', href: '/auth' },
     { name: 'Login', href: '/auth' },
     { name: 'Sign Up', href: '/auth', isButton: true },

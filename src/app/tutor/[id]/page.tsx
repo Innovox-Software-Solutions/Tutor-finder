@@ -34,6 +34,18 @@ export default function TutorProfile() {
     );
   };
 
+  const handleBooking = (type: 'book' | 'demo') => {
+    const session = localStorage.getItem('gharguru_session');
+    if (!session) {
+      alert('You need to login first to ' + (type === 'demo' ? 'request a demo.' : 'book a session.'));
+      router.push('/auth');
+      return;
+    }
+    
+    // Process booking (demo logic)
+    alert(type === 'demo' ? 'Demo request sent successfully!' : 'Redirecting to checkout...');
+  };
+
   return (
     <main className="min-h-screen bg-background selection:bg-accent selection:text-white pb-20">
       {/* Profile Header */}
@@ -214,10 +226,16 @@ export default function TutorProfile() {
                 </div>
 
                 <div className="space-y-3 pt-2">
-                   <button className="group w-full premium-gradient text-white py-4 md:py-5 rounded-xl md:rounded-2xl font-black text-base md:text-lg shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all flex items-center justify-center gap-2 active:scale-95">
+                   <button 
+                     onClick={() => handleBooking('book')}
+                     className="group w-full premium-gradient text-white py-4 md:py-5 rounded-xl md:rounded-2xl font-black text-base md:text-lg shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all flex items-center justify-center gap-2 active:scale-95"
+                   >
                       <Calendar size={18} /> Book Now
                    </button>
-                   <button className="w-full bg-white text-primary border-2 border-primary/10 py-4 md:py-5 rounded-xl md:rounded-2xl font-black text-base md:text-lg hover:border-primary transition-all active:scale-95 text-xs md:text-base">
+                   <button 
+                    onClick={() => handleBooking('demo')}
+                    className="w-full bg-white text-primary border-2 border-primary/10 py-4 md:py-5 rounded-xl md:rounded-2xl font-black text-base md:text-lg hover:border-primary transition-all active:scale-95"
+                   >
                       Request Demo Class
                    </button>
                 </div>
