@@ -145,6 +145,16 @@ export default function TutorOnboarding() {
 function Step1() {
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-500">
+      <div className="space-y-4 md:space-y-6 mb-8 pb-8 border-b border-slate-100">
+        <h3 className="text-[10px] font-black text-accent uppercase tracking-[0.2em] mb-4">Account Creation</h3>
+        <OnboardingInput icon={<User size={18} />} label="Full Name" placeholder="John Doe" />
+        <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
+          <OnboardingInput icon={<Mail size={18} />} label="Email" placeholder="john@example.com" type="email" />
+          <OnboardingInput icon={<Phone size={18} />} label="Phone Number (OTP verify)" placeholder="+91 98765 43210" />
+        </div>
+        <OnboardingInput icon={<Lock size={18} />} label="Password" placeholder="••••••••" type="password" />
+      </div>
+
       <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
         <OnboardingInput icon={<User size={18} />} label="Gender" placeholder="Male / Female / Other" />
         <OnboardingInput icon={<Calendar size={18} />} label="Date of Birth" placeholder="DD/MM/YYYY" type="date" />
