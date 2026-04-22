@@ -15,7 +15,14 @@ export default function AuthPage() {
     setIsLoading(true);
     // Mimicking authentication process
     setTimeout(() => {
-      router.push('/select-role');
+      if (isLogin) {
+        // Direct to dashboard if login
+        // For simulation, we'll go to parent dashboard by default
+        router.push('/dashboard/parent');
+      } else {
+        // Direct to role selection then profile creation if signup
+        router.push('/select-role');
+      }
     }, 1500);
   };
 
