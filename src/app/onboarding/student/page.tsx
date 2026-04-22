@@ -22,7 +22,8 @@ import {
   Upload,
   Building,
   Mail,
-  Lock
+  Lock,
+  Phone
 } from 'lucide-react';
 import Link from 'next/link';
 

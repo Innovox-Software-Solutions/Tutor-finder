@@ -19,7 +19,10 @@ import {
   MapPin,
   Languages,
   ShieldCheck,
-  Users
+  Users,
+  Mail,
+  Lock,
+  Phone
 } from 'lucide-react';
 import Link from 'next/link';
 
